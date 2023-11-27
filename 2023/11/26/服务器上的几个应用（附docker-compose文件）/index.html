@@ -14,7 +14,7 @@
     
     
     
-    <title>服务器上的几个应用（附docker-compose文件） | Hexo</title>
+    <title>服务器上的几个应用（附docker-compose文件） | Jack BLOG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -24,17 +24,17 @@
     <meta name="description" content="现在自己手上有一台服务器，写一个自动部署的脚本感觉挺麻烦，直接把安装过程贴出来，以供自己以后复制粘贴，代码来源：我不是咕咕鸽个人网站、Zcp’s Zone**。 1. 添加一块硬盘12345678910111213141516# Create new empty partitions:parted -s &#x2F;dev&#x2F;vdb mklabel gptparted -s &#x2F;d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务器上的几个应用（附docker-compose文件）">
-<meta property="og:url" content="http://example.com/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:url" content="https://wujackwill.github.io/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/index.html">
+<meta property="og:site_name" content="Jack BLOG">
 <meta property="og:description" content="现在自己手上有一台服务器，写一个自动部署的脚本感觉挺麻烦，直接把安装过程贴出来，以供自己以后复制粘贴，代码来源：我不是咕咕鸽个人网站、Zcp’s Zone**。 1. 添加一块硬盘12345678910111213141516# Create new empty partitions:parted -s &#x2F;dev&#x2F;vdb mklabel gptparted -s &#x2F;d">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-11-26T10:27:31.000Z">
 <meta property="article:modified_time" content="2023-11-26T10:27:31.347Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="Jack Will">
 <meta property="article:tag" content="服务器">
 <meta name="twitter:card" content="summary">
     
-        <link rel="alternate" type="application/atom+xml" title="Hexo" href="/atom.xml">
+        <link rel="alternate" type="application/atom+xml" title="Jack BLOG" href="/atom.xml">
     
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
@@ -59,8 +59,8 @@
           <img src="/img/avatar.jpg">
         </a>
         <hgroup class="introduce">
-          <h5 class="nickname">John Doe</h5>
-          <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
+          <h5 class="nickname">Jack Will</h5>
+          <a href="mailto:undefined" class="mail">
         </hgroup>
       </div>
     </div>
@@ -92,27 +92,6 @@
               <a href="/categories"  >
                 <i class="icon icon-lg icon-th-list"></i>
                 Categories
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://github.com/yscoder" target="_blank" >
-                <i class="icon icon-lg icon-github"></i>
-                Github
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="http://www.weibo.com/ysweb" target="_blank" >
-                <i class="icon icon-lg icon-weibo"></i>
-                Weibo
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/custom"  >
-                <i class="icon icon-lg icon-link"></i>
-                测试
               </a>
             </li>
         
@@ -225,14 +204,12 @@
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/" target="_blank" rel="external">http://example.com/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/</a>
-        
     </div>
     
     <footer>
-        <a href="http://example.com">
-            <img src="/img/avatar.jpg" alt="John Doe">
-            John Doe
+        <a href="https://wujackwill.github.io">
+            <img src="/img/avatar.jpg" alt="Jack Will">
+            Jack Will
         </a>
     </footer>
 </blockquote>
@@ -256,7 +233,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/&title=《服务器上的几个应用（附docker-compose文件）》 — Hexo&pic=http://example.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://wujackwill.github.io/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/&title=《服务器上的几个应用（附docker-compose文件）》 — Jack BLOG&pic=https://wujackwill.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -266,22 +243,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/&title=《服务器上的几个应用（附docker-compose文件）》 — Hexo&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://wujackwill.github.io/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/&title=《服务器上的几个应用（附docker-compose文件）》 — Jack BLOG&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wujackwill.github.io/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《服务器上的几个应用（附docker-compose文件）》 — Hexo&url=http://example.com/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/&via=http://example.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《服务器上的几个应用（附docker-compose文件）》 — Jack BLOG&url=https://wujackwill.github.io/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/&via=https://wujackwill.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://example.com/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://wujackwill.github.io/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -390,7 +367,7 @@
         </p>
     </div>
     <div class="bottom">
-        <p><span>John Doe &copy; 2015 - 2023</span>
+        <p><span>Jack Will &copy; 2015 - 2023</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
@@ -408,7 +385,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/&title=《服务器上的几个应用（附docker-compose文件）》 — Hexo&pic=http://example.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://wujackwill.github.io/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/&title=《服务器上的几个应用（附docker-compose文件）》 — Jack BLOG&pic=https://wujackwill.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -418,22 +395,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/&title=《服务器上的几个应用（附docker-compose文件）》 — Hexo&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://wujackwill.github.io/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/&title=《服务器上的几个应用（附docker-compose文件）》 — Jack BLOG&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wujackwill.github.io/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《服务器上的几个应用（附docker-compose文件）》 — Hexo&url=http://example.com/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/&via=http://example.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《服务器上的几个应用（附docker-compose文件）》 — Jack BLOG&url=https://wujackwill.github.io/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/&via=https://wujackwill.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://example.com/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://wujackwill.github.io/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -444,7 +421,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAAE+CAAAAAAxUyPsAAAFLUlEQVR42u3awWojSRAEUP//T8/CsJdhkRwR2TLD8vpkLKm66rVAWZH19RVfv35fr/7/3+v9q6/e8/6+yRxevfPVq69m9fCFDx8+fPjwBQTbInPWZKnJaAl6Mv/2wePDhw8fPnwXvnwSye3bV9syKOG+rC7/ouDDhw8fPnyf46t/1N+Of9mJ58R52YQPHz58+PD9zXx5uP8+AtgaBnmp0UYD+PDhw4cP38/wbfH6VqzkpUZeMF2igR/qdeDDhw8fPnyHouH//ffDFz58+PDhw3cIxJOm9aXgSF7diqSnHP4dEx8+fPjw4Zs02sA6aZznxO1WPD8G91ST4JvP4sOHDx8+fBNfPt1kipeltm34pz41BvT48OHDhw/fVBVsx7/yrfW99b7FAW07P3/k+PDhw4cPX8u3LXtb/CXWz9v2W8SQ3Ot0sg8fPnz48OE7RNhJTJ+M3AK1QXzeYk/uFX0H8eHDhw8fvrdrzD/Wct/b1Z8I1vPHGY2JDx8+fPjwTXyXxvb2w38PKe4PY2s24MOHDx8+fBe+LTpPbpC/mo/QNrbzcicpsMYiBh8+fPjw4Zv2v1tx89Qhsy2eyFv7W6CPDx8+fPjwbXz5dnrbiuejtWF9GxncS6WX3zt8+PDhw4cv4Gu33/nm/w7a/mdrkD/Q68CHDx8+fPjOfd484L4XFm3r/alIIg/r8eHDhw8fvmf57sVHW+gk729ntYX19xXhw4cPHz58+YqSTXK+pc+36FvI3o6ztfzrsB4fPnz48OGb+FqUJPi+oCQzzB//1pI/HQfHhw8fPnz4po16Mt38yqOErWGQB/R56VN/E/Hhw4cPH76Y795+vi9muz59l2/GwYcPHz58+Ca+7VhYXqw8MNG4pGib4vl7ivQFHz58+PDhi0uW06m3KYzIo4RLSNHedwwL8OHDhw8fvoAv/yG/RAZbAdE+8hZlPASADx8+fPjwxXzbJr9tVI8FwaE8yu/VrhcfPnz48OG78OVb9ASoPXB2CSmSOyaPPB8nOl+ADx8+fPjwvR0hJ9i24kVucQ4d8hKnZS1KFnz48OHDhy/IBJLY+hKCt2HB1pLfjqldXsWHDx8+fPhavjzC/tyBsK242drqzzbd8eHDhw8fvgtfvvg2Vmgfz0b5uWNtUeGCDx8+fPjwTXw5ZX77LaDPl5085raUiR4MPnz48OHD9xDfU63o+wLaJeWFVPIpfPjw4cOH71m+ZwuFPMHeCoh2nORTLV/UyMeHDx8+fPjejtze8tnGdvKfC00bedTlFD58+PDhw3fge6rI2IjzEuTTgUVR6+HDhw8fPnwlXx4TjENPwXcbW2wP8hLx48OHDx8+fC1fG2df4DaI5AhdGwfkkUF0ygAfPnz48OGb+NrjXNthr/bBtMfI2iKsHe2PV/Hhw4cPH76SL4+2t0nnm/YtYshjiJqjbZ/jw4cPHz58wTvbCd1b11t74N7U36DHsB4fPnz48OF7y5dv17eDZfcja3kZlMfuX/GFDx8+fPjwfY6vbUtfAv1L+7wtTfJSrO514MOHDx8+fFOft43ptyNfW9P63rxP4oyWFR8+fPjw4dv47j/8eSHy80BtTF+39vHhw4cPH76JL/8h38qOrfmdt9i3rX7bJMCHDx8+fPh+ki8pPrYC5Wu6tkZ729r/JiLBhw8fPnz4foQvh7iA5o32trneljsvZ44PHz58+PBNfPcDZxfKZ1v1n2gzvJwtPnz48OHDt++pi812XhDkuPmjaoP4S+F1f/D48OHDhw/f7+sfyQ3NTQvmvh0AAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,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" alt="微信分享二维码">
 </div>
 
 
@@ -487,23 +464,6 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
-
-<script>
-(function() {
-    var OriginTitile = document.title, titleTime;
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-            document.title = '死鬼去哪里了！';
-            clearTimeout(titleTime);
-        } else {
-            document.title = '(つェ⊂)咦!又好了!';
-            titleTime = setTimeout(function() {
-                document.title = OriginTitile;
-            },2000);
-        }
-    });
-})();
-</script>
 
 
 

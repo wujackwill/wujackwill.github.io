@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>Jack BLOG</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://wujackwill.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://wujackwill.github.io/"/>
   <updated>2023-11-27T06:20:07.084Z</updated>
-  <id>http://example.com/</id>
+  <id>https://wujackwill.github.io/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Jack Will</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>R语言作业</title>
-    <link href="http://example.com/2023/11/27/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/"/>
-    <id>http://example.com/2023/11/27/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/</id>
+    <link href="https://wujackwill.github.io/2023/11/27/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/"/>
+    <id>https://wujackwill.github.io/2023/11/27/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/</id>
     <published>2023-11-27T03:05:24.000Z</published>
     <updated>2023-11-27T06:20:07.084Z</updated>
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title>服务器上的几个应用（附docker-compose文件）</title>
-    <link href="http://example.com/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/"/>
-    <id>http://example.com/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/</id>
+    <link href="https://wujackwill.github.io/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/"/>
+    <id>https://wujackwill.github.io/2023/11/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%BA%94%E7%94%A8%EF%BC%88%E9%99%84docker-compose%E6%96%87%E4%BB%B6%EF%BC%89/</id>
     <published>2023-11-26T10:27:31.000Z</published>
     <updated>2023-11-26T10:27:31.347Z</updated>
     
@@ -55,7 +55,7 @@
     
     
     
-    <category term="服务器" scheme="http://example.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <category term="服务器" scheme="https://wujackwill.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
   </entry>
   
