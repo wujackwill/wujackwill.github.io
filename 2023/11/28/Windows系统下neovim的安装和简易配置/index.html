@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Windows系统下neovim的安装和简易配置 | Jack BLOG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="安装依赖软件Chocolatey的安装，直接在Powershell(需管理员权限）中输入1Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol &#x3D; [System.Net.ServicePointManager]::SecurityProto">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows系统下neovim的安装和简易配置">
+<meta property="og:url" content="https://wujackwill.github.io/2023/11/28/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8Bneovim%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%80%E6%98%93%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="Jack BLOG">
+<meta property="og:description" content="安装依赖软件Chocolatey的安装，直接在Powershell(需管理员权限）中输入1Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol &#x3D; [System.Net.ServicePointManager]::SecurityProto">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-09796078c897022e007a6d509dbe0889_720w.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-d5ac19b1a056643922eaf02765e0acd6_720w.webp">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-a796fd5d21a9d21096113af281e4d5e7_720w.webp">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-5afc51a3435a8c79f53e5176119675a1_720w.webp">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-beec66b26488894a4cf7e3c4ff4c25e3_720w.webp">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-051b5001c8852fb00b658fad78f5e415_720w.webp">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-62ed942e26f35cb353d59a32930b8990_720w.webp">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-0e2a8da93ccc95542d1e782aa8afbffc_720w.webp">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-c01199eff1a9b7d152d8f5585cdc344a_720w.webp">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-9f91b9efd1a36bb7968a70140e866382_720w.webp">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-41ae6db46d21f0c43ad2c190e6ed2811_720w.webp">
+<meta property="article:published_time" content="2023-11-28T02:34:29.000Z">
+<meta property="article:modified_time" content="2023-11-28T03:15:25.313Z">
+<meta property="article:author" content="Jack Will">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic2.zhimg.com/80/v2-09796078c897022e007a6d509dbe0889_720w.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jack BLOG" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jack Will</h5>
+          <a href="mailto:wujackwill@outlook.com" title="wujackwill@outlook.com" class="mail">wujackwill@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Windows系统下neovim的安装和简易配置</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Windows系统下neovim的安装和简易配置</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-11-28T02:34:29.000Z" itemprop="datePublished" class="page-time">
+  2023-11-28
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装依赖软件"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装依赖软件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Chocolatey的安装，直接在Powershell-需管理员权限）中输入"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Chocolatey的安装，直接在Powershell(需管理员权限）中输入</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#gsudo-git，neovim，python，windows-ternimal的安装"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">gsudo, git，neovim，python，windows ternimal的安装</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Neovim的配置和我使用的插件"><span class="post-toc-number">2.</span> <span class="post-toc-text">Neovim的配置和我使用的插件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#插件管理器vim-plug的安装"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">插件管理器vim-plug的安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#init-vim文件的配置"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">init.vim文件的配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#我的init-vim文件"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">我的init.vim文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#美化"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">美化</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考文档"><span class="post-toc-number">3.</span> <span class="post-toc-text">参考文档</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#原文链接"><span class="post-toc-number">4.</span> <span class="post-toc-text">原文链接</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Windows系统下neovim的安装和简易配置"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Windows系统下neovim的安装和简易配置</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-11-28 10:34:29" datetime="2023-11-28T02:34:29.000Z"  itemprop="datePublished">2023-11-28</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="安装依赖软件"><a href="#安装依赖软件" class="headerlink" title="安装依赖软件"></a>安装依赖软件</h1><h2 id="Chocolatey的安装，直接在Powershell-需管理员权限）中输入"><a href="#Chocolatey的安装，直接在Powershell-需管理员权限）中输入" class="headerlink" title="Chocolatey的安装，直接在Powershell(需管理员权限）中输入"></a><strong>Chocolatey的安装，直接在Powershell(需管理员权限）中输入</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol &#x3D; [System.Net.ServicePointManager]::SecurityProtocol -bor 3073; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https:&#x2F;&#x2F;community.chocolatey.org&#x2F;install.ps1&#39;))</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://pic2.zhimg.com/80/v2-09796078c897022e007a6d509dbe0889_720w.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="gsudo-git，neovim，python，windows-ternimal的安装"><a href="#gsudo-git，neovim，python，windows-ternimal的安装" class="headerlink" title="gsudo, git，neovim，python，windows ternimal的安装"></a>gsudo, git，neovim，python，windows ternimal的安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gsudo：choco install gsudo #（如果一直在管理员权限下的Powershell就不需要了）</span><br><span class="line">git：choco install git</span><br><span class="line">neovim: choco install neovim #（似乎需要科学上网）</span><br><span class="line">python: choco install python</span><br><span class="line">windows ternimal：# 在微软应用商店中安装即可</span><br></pre></td></tr></table></figure>
+<h1 id="Neovim的配置和我使用的插件"><a href="#Neovim的配置和我使用的插件" class="headerlink" title="Neovim的配置和我使用的插件"></a>Neovim的配置和我使用的插件</h1><h2 id="插件管理器vim-plug的安装"><a href="#插件管理器vim-plug的安装" class="headerlink" title="插件管理器vim-plug的安装"></a>插件管理器vim-plug的安装</h2><p>第一种方法在Powershell中输入（我一般用第二种）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iwr -useb https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;junegunn&#x2F;vim-plug&#x2F;master&#x2F;plug.vim |&#96;</span><br><span class="line">    ni &quot;$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])&#x2F;nvim-data&#x2F;site&#x2F;autoload&#x2F;plug.vim&quot; -Force</span><br></pre></td></tr></table></figure></p>
+<p>第二种方法：直接点击<a href="[plug.vim](https://link.zhihu.com/?target=https%3A//raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim">Download plug.vim</a>)右键将plug.vim文件另存到autoload目录下（一般是在C盘tools文件夹中，我电脑的路径是C:\tools\neovim\Neovim\share\nvim\runtime\autoload）<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">call</span> plug#begin(<span class="string">'~/.AppData/local/nvim/plugged'</span>) <span class="comment">"Vim 插件的安装路径，可以自定义。</span></span><br><span class="line"><span class="comment">"~ 表示系统路径，在windows下为 C:/User/username/</span></span><br><span class="line"></span><br><span class="line">Plug <span class="string">'path/of-plugin'</span></span><br><span class="line">Plug <span class="string">'...'</span></span><br><span class="line"><span class="comment">"将所有插件安装在这里</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">call</span> plug#end()</span><br></pre></td></tr></table></figure><br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 配置完成后，重启<span class="keyword">vim</span>。在命令模式下输入就可以自动安装所有插件了。</span><br><span class="line">:PlugInstall</span><br></pre></td></tr></table></figure></p>
+<p>init.vim文件和插件安装位置的设置<br>插件安装位置: 在用户目录下，建立.AppData文件，在里面新建一个local文件，在local里新建一个nvim文件，在里新建一个plugged文件以存放下载的插件(C:\Users\(你的用户名)\AppData\local\nvim\plugged)<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://pic3.zhimg.com/80/v2-d5ac19b1a056643922eaf02765e0acd6_720w.webp" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>init.vim文件位置: 在C:\Users(你的用户名)\AppData\Local目录下新建nvim文件夹，在其中新建init.vim文件，用weindows ternimal输入nvim init.vim编插件(AppData应该是隐藏文件，需如下勾选)<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://pic4.zhimg.com/80/v2-a796fd5d21a9d21096113af281e4d5e7_720w.webp" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://pic2.zhimg.com/80/v2-5afc51a3435a8c79f53e5176119675a1_720w.webp" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h2 id="init-vim文件的配置"><a href="#init-vim文件的配置" class="headerlink" title="init.vim文件的配置"></a>init.vim文件的配置</h2><ol>
+<li>我的插件：</li>
+</ol>
+<ul>
+<li>vim-airline（美化任务栏的）</li>
+<li>Tagbar（检索代码或者文章中固定表达的插件）</li>
+<li>plasticboy/vim-markdown（Markdown语法高亮插件）</li>
+<li>iamcco/markdown-preview.nvim（neovim中markdown文件预览，我配置的是F8 键预览，F9 关闭预览）</li>
+<li>preservim/nerdtree（查看文件）</li>
+<li>yuttie/inkstained-vim（主题，不过我现在也不用了，感觉挺花，换成了gruvbox）</li>
+<li>ferrine/md-img-paste.vim（在写markdown时快速插入图片的插件）</li>
+<li>neoclide/coc.nvim（自动补全插件）</li>
+<li>nvim-telescope/telescope.nvim（配合nvim-lua/plenary.nvim的模糊搜索文件插件，我还不太会用）</li>
+<li>nvim-treesitter/nvim-treesitter（似乎也是语法亮亮）</li>
+</ul>
+<ol>
+<li>安装Coc.vim时可能需下载node.js 及编译工具，直接百度node.js下载，并选择install the necessary tools 即可（可能需要找到<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://pic4.zhimg.com/80/v2-beec66b26488894a4cf7e3c4ff4c25e3_720w.webp" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://pic2.zhimg.com/80/v2-051b5001c8852fb00b658fad78f5e415_720w.webp" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+如果出现以下错误<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://pic1.zhimg.com/80/v2-62ed942e26f35cb353d59a32930b8990_720w.webp" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">解决方法：在Windows ternimal中输入sudo npm install yarn</span><br><span class="line">在C:\Users\jackwill\.AppData\local\nvim\plugged\coc.nvim(如果插件安装位置和我一样的话，总之是在你插件安装文件夹下的coc.nvim文件夹中</span><br><span class="line">用Windows ternimal打开，输入yarn install和yarn build等待一会即可</span><br><span class="line">如果还没搞定，原文链接在参考部分</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>以python为例，安装完coc的插件后，在init.vim里输入:CocInstall coc-pyright</p>
+<h2 id="我的init-vim文件"><a href="#我的init-vim文件" class="headerlink" title="我的init.vim文件"></a>我的init.vim文件</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">call</span> plug#begin(<span class="string">'~/.AppData/local/nvim/plugged'</span>) <span class="comment">"Vim 插件的安装路径，可以自定义。</span></span><br><span class="line"><span class="comment">"~ 表示系统路径，在windows下为 C:/User/username/</span></span><br><span class="line"></span><br><span class="line">Plug <span class="string">'vim-airline/vim-airline'</span></span><br><span class="line">Plug <span class="string">'godlygeek/tabular'</span></span><br><span class="line">Plug <span class="string">'plasticboy/vim-markdown'</span></span><br><span class="line">Plug <span class="string">'iamcco/markdown-preview.nvim'</span>, &#123; <span class="string">'do'</span>: &#123; -&gt; mkdp#util#install() &#125;, <span class="string">'for'</span>: [<span class="string">'markdown'</span>, <span class="string">'vim-plug'</span>]&#125;</span><br><span class="line">Plug <span class="string">'preservim/nerdtree'</span></span><br><span class="line">Plug <span class="string">'yuttie/inkstained-vim'</span></span><br><span class="line">Plug <span class="string">'ferrine/md-img-paste.vim'</span></span><br><span class="line">Plug <span class="string">'neoclide/coc.nvim'</span></span><br><span class="line">Plug <span class="string">'nvim-lua/plenary.nvim'</span></span><br><span class="line">Plug <span class="string">'nvim-telescope/telescope.nvim'</span></span><br><span class="line">Plug <span class="string">'kyazdani42/nvim-web-devicons'</span></span><br><span class="line">Plug <span class="string">'nvim-treesitter/nvim-treesitter'</span>, &#123;<span class="string">'do'</span>: <span class="string">':TSUpdate'</span>&#125;</span><br><span class="line"><span class="comment">"将所有插件安装在这里</span></span><br><span class="line"><span class="keyword">call</span> plug#end()</span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:vim_markdown_folding_disabled</span> = <span class="number">1</span></span><br><span class="line"><span class="keyword">map</span> <span class="symbol">&lt;F2&gt;</span> :NERDTree<span class="symbol">&lt;CR&gt;</span></span><br><span class="line"><span class="keyword">map</span> <span class="symbol">&lt;F2&gt;</span> :NERDTreeToggle<span class="symbol">&lt;CR&gt;</span></span><br><span class="line"><span class="comment">" for normal mode</span></span><br><span class="line"><span class="keyword">nmap</span> <span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;F8&gt;</span> <span class="symbol">&lt;Plug&gt;</span>MarkdownPreview</span><br><span class="line"><span class="comment">" for insert mode</span></span><br><span class="line"><span class="keyword">imap</span> <span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;F8&gt;</span> <span class="symbol">&lt;Plug&gt;</span>MarkdownPreview</span><br><span class="line"><span class="comment">" for normal mode</span></span><br><span class="line"><span class="keyword">nmap</span> <span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;F9&gt;</span> <span class="symbol">&lt;Plug&gt;</span>StopMarkdownPreview</span><br><span class="line"><span class="comment">" for insert mode</span></span><br><span class="line"><span class="keyword">imap</span> <span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;F9&gt;</span> <span class="symbol">&lt;Plug&gt;</span>StopMarkdownPreview</span><br><span class="line"><span class="comment">" Find files using Telescope command-line sugar.</span></span><br><span class="line"><span class="keyword">autocmd</span> FileType markdown <span class="keyword">nmap</span> <span class="symbol">&lt;buffer&gt;</span><span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;leader&gt;</span>i :<span class="keyword">call</span> mdip#MarkdownClipboardImage()<span class="symbol">&lt;CR&gt;</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:mdip_imgdir</span> = <span class="string">'.'</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:mdip_imgname</span> = <span class="string">'image'</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">number</span></span><br></pre></td></tr></table></figure>
+<h2 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h2><ol>
+<li>vim-airline插件和Tagbar插件</li>
+<li>主题(详细教程和主题推荐链接在参考文档里<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(1) 确认当前用户目录下存在C:\tools\neovim\Neovim\share\nvim\runtime\colors目录，没有则新建，安装的Nvim配色方案对应.vim文件需放在该目录下</span><br><span class="line">(2) 下载或编辑某个配色方案的.vim文件，保存到C:\tools\neovim\Neovim\share\nvim\runtime\colors目录下</span><br><span class="line">(3) 修改neovim配置文件init.vim，增加配置项colorscheme molokai并保存 (假设下载了一个叫molokai的配色方案文件molokai.vim)</span><br></pre></td></tr></table></figure></li>
+<li>效果预览（gruvbox的主题）<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://pic1.zhimg.com/80/v2-0e2a8da93ccc95542d1e782aa8afbffc_720w.webp" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+1）python文件<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://pic3.zhimg.com/80/v2-c01199eff1a9b7d152d8f5585cdc344a_720w.webp" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+2）R语言<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://pic3.zhimg.com/80/v2-9f91b9efd1a36bb7968a70140e866382_720w.webp" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+3）markdown文件<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://pic2.zhimg.com/80/v2-41ae6db46d21f0c43ad2c190e6ed2811_720w.webp" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+我是vim的小白，所以现在的配置还挺少的，不过随着使用时间的增加配置应该会越来越多，如果有错误的地方，还望不吝赐教</li>
+</ol>
+<h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><p><a href="https://zhuanlan.zhihu.com/p/84773275" target="_blank" rel="noopener">无火老大哥：高效做笔记:vim + markdown755 赞同 · 171 评论文章</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/138060559" target="_blank" rel="noopener">mzlogin：用 Vim 编辑 Markdown 时直接粘贴图片21 赞同 · 4 评论文章</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/35536223" target="_blank" rel="noopener">Deli：为vim添加Markdown预览功能44 赞同 · 8 评论文章</a></p>
+<p><a href="https://link.zhihu.com/?target=https%3A//chocolatey.org/install">Installing Chocolatey​chocolatey.org/install</a></p>
+<p><a href="https://link.zhihu.com/?target=https%3A//segmentfault.com/a/1190000040291763%3Fsort%3Dvotes">上手Coc.nvim 完全指南 - SegmentFault 思否​segmentfault.com/a/1190000040291763?sort=votes</a></p>
+<p><a href="https://www.zhihu.com/question/19597873" target="_blank" rel="noopener">你认为最好看的 Vim 配色方案（color scheme）是哪款？1225 关注 · 135 回答问题</a></p>
+<p><a href="https://link.zhihu.com/?target=https%3A//vimjc.com/vim-color-schemes.html">15个著名的Vim配色方案整理-Vim入门教程(7) | vim教程网​vimjc.com/vim-color-schemes.html</a></p>
+<p><a href="https://link.zhihu.com/?target=https%3A//www.cnblogs.com/sober-orange/p/cocnvim-build-indexjs.html">[coc.nvim] build/index.js not found, please install dependencies and compile coc.nvim by: yarn install<br/>Press ENTER or type command to continue​www.cnblogs.com/sober-orange/p/cocnvim-build-indexjs.html</a></p>
+<h1 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a>原文链接</h1><p><a href="https://zhuanlan.zhihu.com/p/432823659" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/432823659</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2023-11-28T03:15:25.313Z" itemprop="dateUpdated">2023-11-28 11:15:25</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://wujackwill.github.io">
+            <img src="/img/avatar.jpg" alt="Jack Will">
+            Jack Will
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://wujackwill.github.io/2023/11/28/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8Bneovim%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%80%E6%98%93%E9%85%8D%E7%BD%AE/&title=《Windows系统下neovim的安装和简易配置》 — Jack BLOG&pic=https://wujackwill.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://wujackwill.github.io/2023/11/28/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8Bneovim%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%80%E6%98%93%E9%85%8D%E7%BD%AE/&title=《Windows系统下neovim的安装和简易配置》 — Jack BLOG&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wujackwill.github.io/2023/11/28/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8Bneovim%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%80%E6%98%93%E9%85%8D%E7%BD%AE/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Windows系统下neovim的安装和简易配置》 — Jack BLOG&url=https://wujackwill.github.io/2023/11/28/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8Bneovim%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%80%E6%98%93%E9%85%8D%E7%BD%AE/&via=https://wujackwill.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://wujackwill.github.io/2023/11/28/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8Bneovim%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%80%E6%98%93%E9%85%8D%E7%BD%AE/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2023/11/27/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">R语言作业</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jack Will &copy; 2015 - 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://wujackwill.github.io/2023/11/28/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8Bneovim%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%80%E6%98%93%E9%85%8D%E7%BD%AE/&title=《Windows系统下neovim的安装和简易配置》 — Jack BLOG&pic=https://wujackwill.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://wujackwill.github.io/2023/11/28/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8Bneovim%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%80%E6%98%93%E9%85%8D%E7%BD%AE/&title=《Windows系统下neovim的安装和简易配置》 — Jack BLOG&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wujackwill.github.io/2023/11/28/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8Bneovim%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%80%E6%98%93%E9%85%8D%E7%BD%AE/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Windows系统下neovim的安装和简易配置》 — Jack BLOG&url=https://wujackwill.github.io/2023/11/28/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8Bneovim%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%80%E6%98%93%E9%85%8D%E7%BD%AE/&via=https://wujackwill.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://wujackwill.github.io/2023/11/28/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8Bneovim%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%80%E6%98%93%E9%85%8D%E7%BD%AE/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAAE+CAAAAAAxUyPsAAAFRElEQVR42u3aUW7cMAwE0L3/pdML1NoZUpumyPNXkSa29GTAI1KvV3x9Ha+n33y6z9M9zz/fjCq/w+sTFz58+PDhw1cO4iu4zkznp+fQ+d/OlqFeGHz48OHDh2/El0wg+dgnP38abj75zU/OWLkJPnz48OHD9z18efhI7rMpHGyiTPKK4MOHDx8+fD+Hry0WbBagpW8D0z8ILvjw4cOH79fz5Vv6FvRumzwpNGyK8h/sdeDDhw8fPnzx1W6z//d/X77w4cOHDx++4PPctrTzNnnbUG9Hvmk5FBr48OHDhw/fRKMolO8//5e34peKBRsHfPjw4cOHb8a3b3snxe62QT57ej6G/LUo2uT48OHDhw/fw1M2k8xLAO22PEc8L0B7JC4/oPam4oIPHz58+PDF++v8aFpeRk+428Nhtw667dsV+PDhw4cP34ZvU+zON+HtFn1WDkiKDrOWw4V+Aj58+PDhw7feSCdxoY1HmyZ3W6zPQxI+fPjw4cO34WtDSRss2um1I2kXtX2n3swFHz58+PDhm+SEYQTZcN8t1rdN9Floi9rk+PDhw4cPX6CxaUXviwV5EMkXNW+W52V9fPjw4cOH7xZfPtz9rfPG9qxgsQlebbsdHz58+PDha/naj3fbhN40rdvY1HLnTYLHkePDhw8fPnzxb26KAsNG8qIs3m7p81A1uxs+fPjw4cO34Us24W1E2JQeNvdZVUryYgc+fPjw4cNX8s1o8k1+foit3fzPCg2bPkbUisCHDx8+fPgCvqTU3h4Uy8vfbWG9bagnJY9ZfMGHDx8+fPhavlnTum1R58vTLkmbH/bR6i8VF3z48OHDh2/EN0w9ZeyYtQc2wSUv9CfPxYcPHz58+O7y5a3ru630tgHQNtrbdkI0Wnz48OHDh6/ka4ebP+wW6+YI3ewAXL5U+PDhw4cP34Yv/yJviuP5Fj1vtJ8LAe3RtLp1gQ8fPnz48MV8++nN2tXRVrwknrXzZxc+fPjw4cO34WsDSh50WuJ8G58Hoxa3KFLgw4cPHz582zNgdWG9LTTM7txu7JNwMys3FJT48OHDhw9fEGLybfbdNvmwRR0Epjz6tAuADx8+fPjwbfjabXMeIFqsvCifc7TjHxb38eHDhw8fvjXfrSNim0iU3y0ZW1uIz9sV+PDhw4cP39mk/ZDPIk4baPKi+d1EUb9A+PDhw4cP3yR7FEe98yNlbclgE0eSn7/KKy894MOHDx8+fDO+JI7M6hD5hDcHyJIg1TYViuCCDx8+fPjwxSWD/eY8+at2Am0Bol2YfAEex4kPHz58+PBN6uRFUSBvXeet8bZAn9Pc4n4zC3z48OHDh2/E1waO8+/nWLMl2QedvFj/ZpHw4cOHDx++mC9vLc8ePDuatinl5wu5ORiHDx8+fPjwbfhmxfScOxl6Hm7yybcLnAey1fkCfPjw4cP3i/lm0WRGv4kdeVM/Zz2PrX1d8OHDhw8fvoTvVhTY3GEWX25FrlmUwYcPHz58+DZ8+YDyz3zbum4XaRNQZnCPWQ8fPnz48OFb8OVb+vPgkrZ3jpIXIJLJz16Lx5N9+PDhw4cPX8w3iwizv21p8iWZ/e/+VcCHDx8+fPhmfHlBPLFPIsusaZ3fcxZB2sNw+PDhw4cP34av/ZC3lLeSVD6xFmgWxfDhw4cPH77v4WuPlOUceTTJF6l9SnGAAB8+fPjw4fsw36yxPSsHzA665Ut7oUGODx8+fPjwjfjqD3ZQmp9N8tYRtOS1yJ97oU2ODx8+fPjwzcrTo4L+vnG+TwuzMeQLgw8fPnz48B3v+QeqGnNCwgymlAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
