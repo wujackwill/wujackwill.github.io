@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Jack BLOG</title>
   
-  
+  <subtitle>趋时者博无识之喜，损有道之真</subtitle>
   <link href="https://wujackwill.github.io/atom.xml" rel="self"/>
   
   <link href="https://wujackwill.github.io/"/>
