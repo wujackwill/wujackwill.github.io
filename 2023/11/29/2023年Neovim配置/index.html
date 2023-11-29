@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>2023年Neovim配置 | Jack BLOG | 趋时者博无识之喜，损有道之真</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="成果展示                                                                                                           lsp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2023年Neovim配置">
+<meta property="og:url" content="https://wujackwill.github.io/2023/11/29/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="Jack BLOG">
+<meta property="og:description" content="成果展示                                                                                                           lsp">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://wujackwill.github.io/images/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/Pasted%20image%2020231129113610.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/Pasted%20image%2020231129114250.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/Pasted%20image%2020231129114624.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/Pasted%20image%2020231129120048.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/Pasted%20image%2020231129121620.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/Pasted%20image%2020231129121952.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/Pasted%20image%2020231129124555.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/Pasted%20image%2020231129124918.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/Pasted%20image%2020231129124955.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/Pasted%20image%2020231129125121.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/Pasted%20image%2020231129125343.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/Pasted%20image%2020231129125409.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/Pasted%20image%2020231129125522.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/Pasted%20image%2020231129131620.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/Pasted%20image%2020231129131825.png">
+<meta property="article:published_time" content="2023-11-29T05:35:33.000Z">
+<meta property="article:modified_time" content="2023-11-29T05:40:03.923Z">
+<meta property="article:author" content="Jack Will">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wujackwill.github.io/images/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/Pasted%20image%2020231129113610.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jack BLOG" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/bighead.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jack Will</h5>
+          <a href="mailto:wujackwill@outlook.com" title="wujackwill@outlook.com" class="mail">wujackwill@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">2023年Neovim配置</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">2023年Neovim配置</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-11-29T05:35:33.000Z" itemprop="datePublished" class="page-time">
+  2023-11-29
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#成果展示"><span class="post-toc-number">1.</span> <span class="post-toc-text">成果展示</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-number">2.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Neovim"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">安装Neovim</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置Neovim"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">配置Neovim</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#新建配置文件夹"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">新建配置文件夹</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装安装插件Lazy-nvim"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">安装安装插件Lazy.nvim</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装必要插件"><span class="post-toc-number">3.2.3.</span> <span class="post-toc-text">安装必要插件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#LSP插件"><span class="post-toc-number">3.2.3.1.</span> <span class="post-toc-text">LSP插件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Telescope"><span class="post-toc-number">3.2.3.2.</span> <span class="post-toc-text">Telescope</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Harpoon"><span class="post-toc-number">3.2.3.3.</span> <span class="post-toc-text">Harpoon</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Treesitter"><span class="post-toc-number">3.2.3.4.</span> <span class="post-toc-text">Treesitter</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Neovim基本设置"><span class="post-toc-number">3.2.4.</span> <span class="post-toc-text">Neovim基本设置</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">4.</span> <span class="post-toc-text">参考资料</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-2023年Neovim配置"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">2023年Neovim配置</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-11-29 13:35:33" datetime="2023-11-29T05:35:33.000Z"  itemprop="datePublished">2023-11-29</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="成果展示"><a href="#成果展示" class="headerlink" title="成果展示"></a>成果展示</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/2023年Neovim配置/Pasted%20image%2020231129113610.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>lsp<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/2023年Neovim配置/Pasted%20image%2020231129114250.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>配置文件目录展示<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/2023年Neovim配置/Pasted%20image%2020231129114624.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>2021年的时候写过一篇windows系统下Neovim的安装、配置教程，两年过去了，我的配置文件升了个级，做个记录：</p>
+<ol>
+<li>从coc转为lsp</li>
+<li>弃用nerdtree</li>
+<li>使用WSL下的Neovim</li>
+<li>从Vim-plug转为lazy.nvim管理插件</li>
+<li>从vimscript转为lua写配置文件</li>
+</ol>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><strong>安装过程中，提前配置好系统代理，否则可能安装失败**</strong></p>
+<h2 id="安装Neovim"><a href="#安装Neovim" class="headerlink" title="安装Neovim"></a>安装Neovim</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install software-properties-common</span><br><span class="line">sudo apt-get install python-software-properties</span><br><span class="line">sudo add-apt-repository ppa:neovim-ppa&#x2F;unstable</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install neovim</span><br><span class="line">sudo apt-get install python-dev-is-python3 python-pip python3-dev python3-pip</span><br><span class="line">sudo apt install pip</span><br><span class="line">pip install --user --upgrade pynvim</span><br></pre></td></tr></table></figure>
+<p>安装成功<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/2023年Neovim配置/Pasted%20image%2020231129120048.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h2 id="配置Neovim"><a href="#配置Neovim" class="headerlink" title="配置Neovim"></a>配置Neovim</h2><h3 id="新建配置文件夹"><a href="#新建配置文件夹" class="headerlink" title="新建配置文件夹"></a>新建配置文件夹</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p ~&#x2F;.config&#x2F;nvim # Neovim配置文件夹</span><br><span class="line">mkdir -p ~&#x2F;.config&#x2F;nvim&#x2F;after&#x2F;plugin # 插件配置文件夹</span><br><span class="line">mkdir -p ~&#x2F;.config&#x2F;nvim&#x2F;lua&#x2F;jackwill #基础配置文件夹</span><br><span class="line">mkdir -p ~&#x2F;.config&#x2F;nvim&#x2F;undo # 存放Undotree 文件</span><br></pre></td></tr></table></figure>
+<h3 id="安装安装插件Lazy-nvim"><a href="#安装安装插件Lazy-nvim" class="headerlink" title="安装安装插件Lazy.nvim"></a>安装安装插件Lazy.nvim</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvim ~&#x2F;.config&#x2F;nvim&#x2F;lua&#x2F;jackwill&#x2F;plugins.lua</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 输入以下代码，自动安装插件</span><br><span class="line">local lazypath &#x3D; vim.fn.stdpath(&quot;data&quot;) .. &quot;&#x2F;lazy&#x2F;lazy.nvim&quot;</span><br><span class="line">if not vim.loop.fs_stat(lazypath) then</span><br><span class="line">  vim.fn.system(&#123;</span><br><span class="line">    &quot;git&quot;,</span><br><span class="line">    &quot;clone&quot;,</span><br><span class="line">    &quot;--filter&#x3D;blob:none&quot;,</span><br><span class="line">    &quot;https:&#x2F;&#x2F;github.com&#x2F;folke&#x2F;lazy.nvim.git&quot;,</span><br><span class="line">    &quot;--branch&#x3D;stable&quot;, -- latest stable release</span><br><span class="line">    lazypath,</span><br><span class="line">  &#125;)</span><br><span class="line">end</span><br><span class="line">vim.opt.rtp:prepend(lazypath)</span><br><span class="line"></span><br><span class="line">require(&quot;lazy&quot;).setup(plugins, opts)</span><br><span class="line"></span><br><span class="line">local opts &#x3D; &#123;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 在 nvim ~&#x2F;.config&#x2F;nvim&#x2F;lua&#x2F;jackwill&#x2F;init.lua 中添加以下代码</span><br><span class="line">require(&quot;jackwill.plugins&quot;)</span><br></pre></td></tr></table></figure>
+<p>退出重进Neovim，输入:Lazy,弹出以下页面，说明安装成功</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/2023年Neovim配置/Pasted%20image%2020231129121620.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="安装必要插件"><a href="#安装必要插件" class="headerlink" title="安装必要插件"></a>安装必要插件</h3><h4 id="LSP插件"><a href="#LSP插件" class="headerlink" title="LSP插件"></a>LSP插件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 在plguins.lua文件中添加</span><br><span class="line">local plugins&#x3D;&#123;</span><br><span class="line">--- Uncomment these if you want to manage LSP servers from neovim</span><br><span class="line">-- &#123;&#39;williamboman&#x2F;mason.nvim&#39;&#125;,</span><br><span class="line">-- &#123;&#39;williamboman&#x2F;mason-lspconfig.nvim&#39;&#125;,</span><br><span class="line"></span><br><span class="line">&#123;&#39;VonHeikemen&#x2F;lsp-zero.nvim&#39;, branch &#x3D; &#39;v3.x&#39;&#125;,</span><br><span class="line">&#123;&#39;neovim&#x2F;nvim-lspconfig&#39;&#125;,</span><br><span class="line">&#123;&#39;hrsh7th&#x2F;cmp-nvim-lsp&#39;&#125;,</span><br><span class="line">&#123;&#39;hrsh7th&#x2F;nvim-cmp&#39;&#125;,</span><br><span class="line">&#123;&#39;L3MON4D3&#x2F;LuaSnip&#39;&#125;,</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>:wq，保存退出，再进入Neovim，自动安装插件</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/2023年Neovim配置/Pasted%20image%2020231129121952.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>但是，安装后，插件没有用，我们还需要进行插件配置</p>
+<p>LSP插件设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvim ~&#x2F;.config&#x2F;nvim&#x2F;after&#x2F;plugin&#x2F;lsp.lua</span><br></pre></td></tr></table></figure>
+<p>复制以下代码，安装lsp server</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">local lsp_zero &#x3D; require(&#39;lsp-zero&#39;)</span><br><span class="line"></span><br><span class="line">lsp_zero.on_attach(function(client, bufnr)</span><br><span class="line">  -- see :help lsp-zero-keybindings</span><br><span class="line">  -- to learn the available actions</span><br><span class="line">  lsp_zero.default_keymaps(&#123;buffer &#x3D; bufnr&#125;)</span><br><span class="line">end)</span><br><span class="line"></span><br><span class="line">require(&#39;mason&#39;).setup(&#123;&#125;)</span><br><span class="line">require(&#39;mason-lspconfig&#39;).setup(&#123;</span><br><span class="line">  ensure_installed &#x3D; &#123;&#39;rust_analyzer&#39;,&#39;tsserver&#39;,&#39;lua_ls&#39;&#125;,</span><br><span class="line">  handlers &#x3D; &#123;</span><br><span class="line">    lsp_zero.default_setup,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>如果出现白字，则安装成功<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/2023年Neovim配置/Pasted%20image%2020231129124555.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h4 id="Telescope"><a href="#Telescope" class="headerlink" title="Telescope"></a>Telescope</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 在plguins.lua文件中添加</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line">    &#39;nvim-telescope&#x2F;telescope.nvim&#39;, tag &#x3D; &#39;0.1.4&#39;,</span><br><span class="line">-- or                              , branch &#x3D; &#39;0.1.x&#39;,</span><br><span class="line">      dependencies &#x3D; &#123; &#39;nvim-lua&#x2F;plenary.nvim&#39; &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/2023年Neovim配置/Pasted%20image%2020231129124918.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>退出neovim，重进即可安装插件<br>安装成功<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/2023年Neovim配置/Pasted%20image%2020231129124955.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>进行配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvim ~&#x2F;.config&#x2F;nvim&#x2F;after&#x2F;plugin&#x2F;telescope.lua</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">local builtin &#x3D; require(&#39;telescope.builtin&#39;)</span><br><span class="line">vim.keymap.set(&#39;n&#39;, &#39;&lt;leader&gt;pf&#39;, builtin.find_files, &#123;&#125;)</span><br><span class="line"></span><br><span class="line">vim.keymap.set(&#39;n&#39;, &#39;&lt;C-p&gt;&#39;, builtin.git_files, &#123;&#125;)</span><br><span class="line">vim.keymap.set(&#39;n&#39;, &#39;&lt;leader&gt;ps&#39;, function()</span><br><span class="line">    builtin.grep_string(&#123; search &#x3D; vim.fn.input(&quot;Grep &gt; &quot;) &#125;)</span><br><span class="line">end)</span><br><span class="line">vim.keymap.set(&#39;n&#39;, &#39;&lt;leader&gt;vh&#39;, builtin.help_tags, &#123;&#125;)</span><br></pre></td></tr></table></figure>
+<p>安装成功<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/2023年Neovim配置/Pasted%20image%2020231129125121.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h4 id="Harpoon"><a href="#Harpoon" class="headerlink" title="Harpoon"></a>Harpoon</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 与之前的插件同理，在在plguins.lua文件中添加</span><br><span class="line">&#39;nvim-lua&#x2F;plenary.nvim&#39;，</span><br><span class="line">&#39;ThePrimeagen&#x2F;harpoon&#39;</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/2023年Neovim配置/Pasted%20image%2020231129125343.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>退出neovim，重进即可安装插件<br>进行配置<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/2023年Neovim配置/Pasted%20image%2020231129125409.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvim ~&#x2F;.config&#x2F;nvim&#x2F;after&#x2F;plugin&#x2F;harpoon.lua</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">local mark &#x3D; require(&quot;harpoon.mark&quot;)</span><br><span class="line">local ui &#x3D; require(&quot;harpoon.ui&quot;)</span><br><span class="line"></span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;&lt;leader&gt;a&quot;, mark.add_file)</span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;&lt;leader&gt;&lt;Tab&gt;&quot;, ui.toggle_quick_menu)</span><br><span class="line"></span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;&lt;leader&gt;q&quot;, function() ui.nav_file(1) end)</span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;&lt;leader&gt;w&quot;, function() ui.nav_file(2) end)</span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;&lt;leader&gt;e&quot;, function() ui.nav_file(3) end)</span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;&lt;leader&gt;r&quot;, function() ui.nav_file(4) end)</span><br></pre></td></tr></table></figure>
+<p>安装成功<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/2023年Neovim配置/Pasted%20image%2020231129125522.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h4 id="Treesitter"><a href="#Treesitter" class="headerlink" title="Treesitter"></a>Treesitter</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 与之前的插件同理，在在plguins.lua文件中添加</span><br><span class="line">&#39;nvim-treesitter&#x2F;nvim-treesitter&#39;</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/2023年Neovim配置/Pasted%20image%2020231129131620.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>退出neovim，重进即可安装插件<br>进行配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvim ~&#x2F;.config&#x2F;nvim&#x2F;after&#x2F;plugin&#x2F;treesitter.lua</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">require&#39;nvim-treesitter.configs&#39;.setup &#123;</span><br><span class="line">  -- A list of parser names, or &quot;all&quot; (the five listed parsers should always be installed)</span><br><span class="line">  ensure_installed &#x3D; &#123; &quot;c&quot;, &quot;lua&quot;, &quot;vim&quot;, &quot;vimdoc&quot;,&quot;rust&quot;,&quot;python&quot;,&quot;javascript&quot;&#125;,</span><br><span class="line"></span><br><span class="line">  -- Install parsers synchronously (only applied to &#96;ensure_installed&#96;)</span><br><span class="line">  sync_install &#x3D; false,</span><br><span class="line"></span><br><span class="line">  -- Automatically install missing parsers when entering buffer</span><br><span class="line">  -- Recommendation: set to false if you don&#39;t have &#96;tree-sitter&#96; CLI installed locally</span><br><span class="line">  auto_install &#x3D; true,</span><br><span class="line"></span><br><span class="line">  ---- If you need to change the installation directory of the parsers (see -&gt; Advanced Setup)</span><br><span class="line">  -- parser_install_dir &#x3D; &quot;&#x2F;some&#x2F;path&#x2F;to&#x2F;store&#x2F;parsers&quot;, -- Remember to run vim.opt.runtimepath:append(&quot;&#x2F;some&#x2F;path&#x2F;to&#x2F;store&#x2F;parsers&quot;)!</span><br><span class="line"></span><br><span class="line">  highlight &#x3D; &#123;</span><br><span class="line">    enable &#x3D; true,</span><br><span class="line"></span><br><span class="line">    disable &#x3D;  &#123;&quot;latex&quot;&#125;,</span><br><span class="line">    -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to</span><br><span class="line">    -- disable highlighting for the &#96;tex&#96; filetype, you need to include &#96;latex&#96; in this list as this is</span><br><span class="line">    -- the name of the parser)</span><br><span class="line">    -- list of language that will be disabled</span><br><span class="line">    -- Setting this to true will run &#96;:h syntax&#96; and tree-sitter at the same time.</span><br><span class="line">    -- Set this to &#96;true&#96; if you depend on &#39;syntax&#39; being enabled (like for indentation).</span><br><span class="line">    -- Using this option may slow down your editor, and you may see some duplicate highlights.</span><br><span class="line">    -- Instead of true it can also be a list of languages</span><br><span class="line">    additional_vim_regex_highlighting &#x3D; false,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>退出neovim，重进即可安装<br>安装成功<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/2023年Neovim配置/Pasted%20image%2020231129131825.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h3 id="Neovim基本设置"><a href="#Neovim基本设置" class="headerlink" title="Neovim基本设置"></a>Neovim基本设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvim ~&#x2F;.config&#x2F;nvim&#x2F;lua&#x2F;jackwill&#x2F;set.lua</span><br></pre></td></tr></table></figure>
+<p>一些基础配置(guicursor、相对行距、关闭swapfile…)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">vim.opt.guicursor &#x3D; &quot;&quot;</span><br><span class="line"></span><br><span class="line">vim.opt.nu &#x3D; true</span><br><span class="line">vim.opt.relativenumber &#x3D; true</span><br><span class="line"></span><br><span class="line">vim.opt.tabstop &#x3D; 4</span><br><span class="line">vim.opt.softtabstop &#x3D; 4</span><br><span class="line">vim.opt.shiftwidth &#x3D; 4</span><br><span class="line">vim.opt.expandtab &#x3D; true</span><br><span class="line"></span><br><span class="line">vim.opt.smartindent &#x3D; true</span><br><span class="line"></span><br><span class="line">vim.opt.wrap &#x3D; false</span><br><span class="line"></span><br><span class="line">vim.opt.swapfile &#x3D; false</span><br><span class="line">vim.opt.backup &#x3D; false</span><br><span class="line">vim.opt.undodir &#x3D; &quot;&#x2F;home&#x2F;jackwill&#x2F;.config&#x2F;nvim&#x2F;undo&quot;</span><br><span class="line">vim.opt.undofile &#x3D; true</span><br><span class="line"></span><br><span class="line">vim.opt.hlsearch &#x3D; false</span><br><span class="line">vim.opt.incsearch &#x3D; true</span><br><span class="line"></span><br><span class="line">vim.opt.termguicolors &#x3D; true</span><br><span class="line"></span><br><span class="line">vim.opt.scrolloff &#x3D; 8</span><br><span class="line">vim.opt.signcolumn &#x3D; &quot;yes&quot;</span><br><span class="line">vim.opt.isfname:append(&quot;@-@&quot;)</span><br><span class="line"></span><br><span class="line">vim.opt.updatetime &#x3D; 50</span><br><span class="line"></span><br><span class="line">vim.opt.colorcolumn &#x3D; &quot;80&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">vim.api.nvim_set_hl(0, &quot;Normal&quot;, &#123; bg &#x3D; &quot;none&quot; &#125;)</span><br><span class="line">vim.api.nvim_set_hl(0, &quot;NormalFloat&quot;, &#123; bg &#x3D; &quot;none&quot; &#125;)</span><br></pre></td></tr></table></figure>
+<p>修改一些键位<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvim ~&#x2F;.config&#x2F;nvim&#x2F;lua&#x2F;jackwill&#x2F;remap.lua</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">vim.api.nvim_set_keymap(&#39;n&#39;, &#39;&lt;Space&gt;&#39;, &#39;&#39;, &#123;&#125;)</span><br><span class="line">vim.g.mapleader &#x3D; &quot; &quot;</span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;&lt;leader&gt;pv&quot;, vim.cmd.Ex)</span><br><span class="line"></span><br><span class="line">vim.keymap.set(&quot;v&quot;, &quot;J&quot;, &quot;:m &#39;&gt;+1&lt;CR&gt;gv&#x3D;gv&quot;)</span><br><span class="line">vim.keymap.set(&quot;v&quot;, &quot;K&quot;, &quot;:m &#39;&lt;-2&lt;CR&gt;gv&#x3D;gv&quot;)</span><br><span class="line"></span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;J&quot;, &quot;mzJ&#96;z&quot;)</span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;&lt;C-d&gt;&quot;, &quot;&lt;C-d&gt;zz&quot;)</span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;&lt;C-u&gt;&quot;, &quot;&lt;C-u&gt;zz&quot;)</span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;n&quot;, &quot;nzzzv&quot;)</span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;N&quot;, &quot;Nzzzv&quot;)</span><br><span class="line"></span><br><span class="line">-- greatest remap ever</span><br><span class="line">vim.keymap.set(&quot;x&quot;, &quot;&lt;leader&gt;p&quot;, [[&quot;_dP]])</span><br><span class="line"></span><br><span class="line">-- next greatest remap ever : asbjornHaland</span><br><span class="line">vim.keymap.set(&#123;&quot;n&quot;, &quot;v&quot;&#125;, &quot;&lt;leader&gt;y&quot;, [[&quot;+y]])</span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;&lt;leader&gt;Y&quot;, [[&quot;+Y]])</span><br><span class="line"></span><br><span class="line">vim.keymap.set(&#123;&quot;n&quot;, &quot;v&quot;&#125;, &quot;&lt;leader&gt;d&quot;, [[&quot;_d]])</span><br><span class="line"></span><br><span class="line">-- This is going to get me cancelled</span><br><span class="line"></span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;Q&quot;, &quot;&lt;nop&gt;&quot;)</span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;&lt;C-f&gt;&quot;, &quot;&lt;cmd&gt;silent !tmux neww tmux-sessionizer&lt;CR&gt;&quot;)</span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;&lt;leader&gt;f&quot;, vim.lsp.buf.format)</span><br><span class="line"></span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;&lt;C-k&gt;&quot;, &quot;&lt;cmd&gt;cnext&lt;CR&gt;zz&quot;)</span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;&lt;C-j&gt;&quot;, &quot;&lt;cmd&gt;cprev&lt;CR&gt;zz&quot;)</span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;&lt;leader&gt;k&quot;, &quot;&lt;cmd&gt;lnext&lt;CR&gt;zz&quot;)</span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;&lt;leader&gt;j&quot;, &quot;&lt;cmd&gt;lprev&lt;CR&gt;zz&quot;)</span><br><span class="line"></span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;&lt;leader&gt;s&quot;, [[:%s&#x2F;\&lt;&lt;C-r&gt;&lt;C-w&gt;\&gt;&#x2F;&lt;C-r&gt;&lt;C-w&gt;&#x2F;gI&lt;Left&gt;&lt;Left&gt;&lt;Left&gt;]])</span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;&lt;leader&gt;x&quot;, &quot;&lt;cmd&gt;!chmod +x %&lt;CR&gt;&quot;, &#123; silent &#x3D; true &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">vim.keymap.set(&quot;n&quot;, &quot;&lt;leader&gt;&lt;leader&gt;&quot;, function()</span><br><span class="line">    vim.cmd(&quot;so&quot;)</span><br><span class="line">end)</span><br></pre></td></tr></table></figure>
+<p>最后，在/lua/jackwill/init.lua文件中添加下面两行使设置生效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">require(&quot;jackwill.set&quot;)</span><br><span class="line">require(&quot;jackwill.remap&quot;)</span><br></pre></td></tr></table></figure>
+<p>更改主题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvim ~&#x2F;.config&#x2F;nvim&#x2F;lua&#x2F;jackwill&#x2F;plugins.lua</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 与之前的插件同理，在在plguins.lua文件中添加</span><br><span class="line">&#123; &#39;rose-pine&#x2F;neovim&#39;, name &#x3D; &#39;rose-pine&#39; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 插件安装好后，添加以下代码,重启Neovim即可生效</span><br><span class="line">vim.cmd(&#39;colorscheme rose-pine&#39;)</span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://www.youtube.com/watch?v=w7i4amO_zaE" target="_blank" rel="noopener">Theperimgeagen的视频</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2023-11-29T05:40:03.923Z" itemprop="dateUpdated">2023-11-29 13:40:03</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://wujackwill.github.io">
+            <img src="/img/bighead.png" alt="Jack Will">
+            Jack Will
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://wujackwill.github.io/2023/11/29/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/&title=《2023年Neovim配置》 — Jack BLOG&pic=https://wujackwill.github.io/img/bighead.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://wujackwill.github.io/2023/11/29/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/&title=《2023年Neovim配置》 — Jack BLOG&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wujackwill.github.io/2023/11/29/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2023年Neovim配置》 — Jack BLOG&url=https://wujackwill.github.io/2023/11/29/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/&via=https://wujackwill.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://wujackwill.github.io/2023/11/29/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2023/11/28/Windows%E7%B3%BB%E7%BB%9F%E4%B8%8Bneovim%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%80%E6%98%93%E9%85%8D%E7%BD%AE/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Windows系统下neovim的安装和简易配置</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "LIuafXcuE4ZTDF1ENVVfqwKZ-gzGzoHsz",
+            appKey: "zq46WsCoIFdRpzjYjeJBJEQc",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jack Will &copy; 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://wujackwill.github.io/2023/11/29/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/&title=《2023年Neovim配置》 — Jack BLOG&pic=https://wujackwill.github.io/img/bighead.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://wujackwill.github.io/2023/11/29/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/&title=《2023年Neovim配置》 — Jack BLOG&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wujackwill.github.io/2023/11/29/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《2023年Neovim配置》 — Jack BLOG&url=https://wujackwill.github.io/2023/11/29/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/&via=https://wujackwill.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://wujackwill.github.io/2023/11/29/2023%E5%B9%B4Neovim%E9%85%8D%E7%BD%AE/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvklEQVR42u3aQQ6bQAwF0Nz/0u2mi1Yp5Nsep1R6rKIIyDwWjPPt1ys+fvx2vH9///nq/Pc7v98hueeBAw8PD2+w9PzH7peeLzf/rftrL1eIh4eHt8ZLlltl9B7c/eZR3Xjw8PDwnsDrMe6vyuthPDw8vP+Rd1/sVhdX3XLw8PDwnsNLCt88LKhuA/k5i1kLHh4eXszLu0jP+bzS38PDw8Mbd9WrL+tq6yvZPHoB8a+r8PDw8BZ4+Qs3iWVPvavzIj5aJx4eHt5XeEmbPw9Ve4uujhRcnomHh4d3lJf/1e+Vzr1217zBFs0+4OHh4R3l9TaDZCPpDW9V22B4eHh4e7xqGNELLPJ39aSDd3ktHh4e3gIv/6vfe1lPNqHexhBtD3h4eHhjXrVxlbzce3FDPqYwacXh4eHh9Xi9l3jS8s/HAk5tFZcNMDw8PLyjvF6bvzpSUA0deoV4lLjg4eHhjXlnS+S8FM6v6kUkf9n38PDw8A7xJk2mPBrIt4pqXjKKbvHw8PBavGqompfIeYDba2UlkQQeHh7eNm8etiZxQ56R9Bpmf5yPh4eHt8bLC9ZeVFFFVltrl/fEw8PDW+D1wtP8Ecxf9L2xsPJJeHh4eK15zt7z6IUIeQE9CTLw8PDwvsPLw4hkWckjGJXI86ErPDw8vFbHv1fg9orjauk8eWR4eHh4/4o3GSCohsK9EasPv46Hh4f3Rd6pRlRvKGG+Kjw8PLxtXvPiuCDON5jX+MDDw8Pb4/UC1lPjU/nn5vABHh4e3gJvPrE1KZfzWHbyUPDw8PA2ePNG/kYYkd/tQ5iLh4eHt8arDjPlMeu81O6NF+Dh4eE9h1cdAqi2/JMopBAx4+Hh4T2elyw9HxdItpwPbTk8PDy8NV6vFK5GDzkgD5SjjQEPDw/vKG/+hz8prMulcPxYDwxs4eHh4aW8n4cBxpv+KlOBAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
