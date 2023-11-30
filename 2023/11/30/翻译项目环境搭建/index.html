@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>翻译项目环境搭建 | Jack BLOG | 趋时者博无识之喜，损有道之真</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="苦于收费的trados，又不想用盗版，转而使用免费开源的Weblate搭建一个管理翻译项目的网站 安装Nginx proxy manager1234567891011121314151617sudo -i # 切换到 root 用户    apt update -y  # 升级 packages    apt install wget curl sudo vim git -y  # Debian">
+<meta property="og:type" content="article">
+<meta property="og:title" content="翻译项目环境搭建">
+<meta property="og:url" content="https://wujackwill.github.io/2023/11/30/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
+<meta property="og:site_name" content="Jack BLOG">
+<meta property="og:description" content="苦于收费的trados，又不想用盗版，转而使用免费开源的Weblate搭建一个管理翻译项目的网站 安装Nginx proxy manager1234567891011121314151617sudo -i # 切换到 root 用户    apt update -y  # 升级 packages    apt install wget curl sudo vim git -y  # Debian">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://wujackwill.github.io/images/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Pasted%20image%2020231130161710.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Pasted%20image%2020231130161724.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Pasted%20image%2020231130161746.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Pasted%20image%2020231130161837.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Pasted%20image%2020231130161929.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Pasted%20image%2020231130162030.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Pasted%20image%2020231130162139.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Pasted%20image%2020231130162231.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Pasted%20image%2020231130162324.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Pasted%20image%2020231130162410.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Pasted%20image%2020231130162430.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Pasted%20image%2020231130162523.png">
+<meta property="og:image" content="https://wujackwill.github.io/images/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Pasted%20image%2020231130162542.png">
+<meta property="article:published_time" content="2023-11-30T08:33:38.000Z">
+<meta property="article:modified_time" content="2023-11-30T08:33:38.323Z">
+<meta property="article:author" content="Jack Will">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wujackwill.github.io/images/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Pasted%20image%2020231130161710.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jack BLOG" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/bighead.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jack Will</h5>
+          <a href="mailto:wujackwill@outlook.com" title="wujackwill@outlook.com" class="mail">wujackwill@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">翻译项目环境搭建</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">翻译项目环境搭建</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-11-30T08:33:38.000Z" itemprop="datePublished" class="page-time">
+  2023-11-30
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装Nginx-proxy-manager"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装Nginx proxy manager</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装Weblate"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装Weblate</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Weblate配置与新建翻译项目"><span class="post-toc-number">3.</span> <span class="post-toc-text">Weblate配置与新建翻译项目</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加用户"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">添加用户</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建一个翻译项目"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">创建一个翻译项目</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-翻译项目环境搭建"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">翻译项目环境搭建</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-11-30 16:33:38" datetime="2023-11-30T08:33:38.000Z"  itemprop="datePublished">2023-11-30</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>苦于收费的trados，又不想用盗版，转而使用免费开源的Weblate搭建一个管理翻译项目的网站</p>
+<h1 id="安装Nginx-proxy-manager"><a href="#安装Nginx-proxy-manager" class="headerlink" title="安装Nginx proxy manager"></a>安装Nginx proxy manager</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">sudo -i # 切换到 root 用户  </span><br><span class="line">  </span><br><span class="line">apt update -y  # 升级 packages  </span><br><span class="line">  </span><br><span class="line">apt install wget curl sudo vim git -y  # Debian 系统比较干净，安装常用的软件</span><br><span class="line"></span><br><span class="line">wget -qO- get.docker.com | bash</span><br><span class="line"></span><br><span class="line">docker -v  #查看 docker 版本</span><br><span class="line"></span><br><span class="line">systemctl enable docker  # 设置开机自动启动</span><br><span class="line"></span><br><span class="line">sudo curl -L &quot;https:&#x2F;&#x2F;github.com&#x2F;docker&#x2F;compose&#x2F;releases&#x2F;download&#x2F;1.29.2&#x2F;docker-compose-$(uname -s)-$(uname -m)&quot; -o &#x2F;usr&#x2F;local&#x2F;bin&#x2F;docker-compose</span><br><span class="line"></span><br><span class="line">sudo chmod +x &#x2F;usr&#x2F;local&#x2F;bin&#x2F;docker-compose</span><br><span class="line"></span><br><span class="line">docker-compose --version  #查看 docker-compose 版本</span><br></pre></td></tr></table></figure>
+<p>修改Docker配置(可选)<br>内容参考：<a href="https://u.sb/debian-install-docker/" target="_blank" rel="noopener">烧饼博客</a></p>
+<p>以下配置会增加一段自定义内网 IPv6 地址，开启容器的 IPv6 功能，以及限制日志文件大小，防止 Docker 日志塞满硬盘（泪的教训）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;EOF  </span><br><span class="line">&#123;  </span><br><span class="line">    &quot;log-driver&quot;: &quot;json-file&quot;,  </span><br><span class="line">    &quot;log-opts&quot;: &#123;  </span><br><span class="line">        &quot;max-size&quot;: &quot;20m&quot;,  </span><br><span class="line">        &quot;max-file&quot;: &quot;3&quot;  </span><br><span class="line">    &#125;,  </span><br><span class="line">    &quot;ipv6&quot;: true,  </span><br><span class="line">    &quot;fixed-cidr-v6&quot;: &quot;fd00:dead:beef:c0::&#x2F;80&quot;,  </span><br><span class="line">    &quot;experimental&quot;:true,  </span><br><span class="line">    &quot;ip6tables&quot;:true  </span><br><span class="line">&#125;  </span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+<p>重启 Docker 服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure><br>创建一下安装的目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo -i  </span><br><span class="line">  </span><br><span class="line">mkdir -p &#x2F;root&#x2F;data&#x2F;docker_data&#x2F;npm</span><br><span class="line">  </span><br><span class="line">cd &#x2F;root&#x2F;data&#x2F;docker_data&#x2F;npm</span><br></pre></td></tr></table></figure><br>创建docker-compose文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim docker-compose.yml</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">version: &#39;3&#39;  </span><br><span class="line">services:  </span><br><span class="line">  app:  </span><br><span class="line">    image: &#39;jc21&#x2F;nginx-proxy-manager:latest&#39;  </span><br><span class="line">    restart: unless-stopped  </span><br><span class="line">    ports:  </span><br><span class="line">      - &#39;85:80&#39;  # 保持默认即可，不建议修改左侧的80  </span><br><span class="line">      - &#39;81:81&#39;  # 冒号左边可以改成自己服务器未被占用的端口  </span><br><span class="line">      - &#39;443:443&#39; # 保持默认即可，不建议修改左侧的443  </span><br><span class="line">    volumes:  </span><br><span class="line">      - .&#x2F;data:&#x2F;data # 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 data 文件夹中  </span><br><span class="line">      - .&#x2F;letsencrypt:&#x2F;etc&#x2F;letsencrypt  # 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 letsencrypt 文件夹中</span><br></pre></td></tr></table></figure>
+<p>开启容器、打开端口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up -d</span><br><span class="line"></span><br><span class="line">ufw allow 81</span><br></pre></td></tr></table></figure></p>
+<h1 id="安装Weblate"><a href="#安装Weblate" class="headerlink" title="安装Weblate"></a>安装Weblate</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;WeblateOrg&#x2F;docker-compose.git weblate-docker</span><br><span class="line">cd weblate-docker</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim docker-compose.override.yml</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">version: &#39;3&#39;</span><br><span class="line">services:</span><br><span class="line">  weblate:</span><br><span class="line">    ports:</span><br><span class="line">      - 80:8080</span><br><span class="line">    environment:</span><br><span class="line">      WEBLATE_EMAIL_HOST: smtp.163.com</span><br><span class="line">      WEBLATE_EMAIL_HOST_USER: wujackwill@163.com</span><br><span class="line">      WEBLATE_EMAIL_HOST_PASSWORD: smtp密码</span><br><span class="line">      WEBLATE_SERVER_EMAIL: wujackwill@163.com</span><br><span class="line">      WEBLATE_DEFAULT_FROM_EMAIL: wujackwill@163.com</span><br><span class="line">      WEBLATE_SITE_DOMAIN: weblate.jackwill.top # weblate网站网址</span><br><span class="line">      WEBLATE_ADMIN_PASSWORD: 管理员密码</span><br><span class="line">      WEBLATE_ADMIN_EMAIL: wujackwill@163.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up -d</span><br><span class="line"></span><br><span class="line">ufw allow 80</span><br></pre></td></tr></table></figure>
+<h1 id="Weblate配置与新建翻译项目"><a href="#Weblate配置与新建翻译项目" class="headerlink" title="Weblate配置与新建翻译项目"></a>Weblate配置与新建翻译项目</h1><h2 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h2><p>配置完Nginx反代、CloudfareDNS设置好后，浏览器输入<code>https://weblate网址/admin/</code>打开管理员面板，输入刚才设置好的用户名和密码登入。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/翻译项目环境搭建/Pasted%20image%2020231130161710.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>点击增加User添加用户<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/翻译项目环境搭建/Pasted%20image%2020231130161724.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>输入用户名、密码、电子邮箱创建用户<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/翻译项目环境搭建/Pasted%20image%2020231130161746.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h2 id="创建一个翻译项目"><a href="#创建一个翻译项目" class="headerlink" title="创建一个翻译项目"></a>创建一个翻译项目</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/翻译项目环境搭建/Pasted%20image%2020231130161837.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>填入项目名称和项目网址(暂时还没搞明白、直接填入网站的网址)，填完点击保存<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/翻译项目环境搭建/Pasted%20image%2020231130161929.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>点击添加新翻译部件<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/翻译项目环境搭建/Pasted%20image%2020231130162030.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>选择翻译文档、选择一个文档、随便填入URL标识、选择原语言，点击继续<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/翻译项目环境搭建/Pasted%20image%2020231130162139.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>选择纯文本文件，点击继续<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/翻译项目环境搭建/Pasted%20image%2020231130162231.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>如果不需要别的配置，取消编辑译文模版文件即可下一步<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/翻译项目环境搭建/Pasted%20image%2020231130162324.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>等待更新完部件，直接点击回到部件<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/翻译项目环境搭建/Pasted%20image%2020231130162410.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>已经成功导入<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/翻译项目环境搭建/Pasted%20image%2020231130162430.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>点击英语<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/翻译项目环境搭建/Pasted%20image%2020231130162523.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>点击翻译开始翻译，翻译完选择保存即可<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/翻译项目环境搭建/Pasted%20image%2020231130162542.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p>未完待续…</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2023-11-30T08:33:38.323Z" itemprop="dateUpdated">2023-11-30 16:33:38</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://wujackwill.github.io">
+            <img src="/img/bighead.png" alt="Jack Will">
+            Jack Will
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://wujackwill.github.io/2023/11/30/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/&title=《翻译项目环境搭建》 — Jack BLOG&pic=https://wujackwill.github.io/img/bighead.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://wujackwill.github.io/2023/11/30/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/&title=《翻译项目环境搭建》 — Jack BLOG&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wujackwill.github.io/2023/11/30/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《翻译项目环境搭建》 — Jack BLOG&url=https://wujackwill.github.io/2023/11/30/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/&via=https://wujackwill.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://wujackwill.github.io/2023/11/30/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2023/11/29/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">个人博客搭建</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'false' == 'true',
+            appId: "LIuafXcuE4ZTDF1ENVVfqwKZ-gzGzoHsz",
+            appKey: "zq46WsCoIFdRpzjYjeJBJEQc",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jack Will &copy; 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://wujackwill.github.io/2023/11/30/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/&title=《翻译项目环境搭建》 — Jack BLOG&pic=https://wujackwill.github.io/img/bighead.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://wujackwill.github.io/2023/11/30/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/&title=《翻译项目环境搭建》 — Jack BLOG&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wujackwill.github.io/2023/11/30/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《翻译项目环境搭建》 — Jack BLOG&url=https://wujackwill.github.io/2023/11/30/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/&via=https://wujackwill.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://wujackwill.github.io/2023/11/30/%E7%BF%BB%E8%AF%91%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD9ElEQVR42u3awW7bQAwEUP//T7tAr47lGXLltMDTyWhiafepwIRcPh7x9fx7vfuX18/XP329z+v17m7X37p+1rELBw4cOHAEW22Xlf9+TrN/De1qf1gDDhw4cOA4xHG9lHZ7bQRGCw2iNwn7D3vHgQMHDhxf5LjeQBKQ+X1ylBwIBw4cOHD8yxx5h23fudxvFQcOHDhwfJ8jL7pmcZiE5awka5ubx3qlOHDgwIHjam1F1P2Pn2+c78CBAwcOHHHE5qGbtxH3QbsJ1A93wIEDBw4ca458WCEvrvbhlxO3RWP0mzhw4MCBY81xvYh2q23oto3INs5nrxMHDhw4cMw48mP+/TFPHur5Kzl1jIQDBw4cOM5yJEtPUPLGX1LOtQSbtiYOHDhw4LiDIy+TknJuduCUFI15c7AuFHHgwIEDxw0csxDNY7X9bnv0lf/+2+YgDhw4cOBYcLRDBvlZVttMnK1kdgD2YSU4cODAgWPNkd96NtyQDDrMgnk/NoEDBw4cOO7gmB3Y5NveNxzbBuKwOYgDBw4cOG7j2ITWLPxODTe0hV+U8Dhw4MCBI+ZoRxDaoYc8INtib1bafVgzDhw4cOA4ytFuYzNYkL+GOyL5w6gcDhw4cOBYc+QPmxVI9x045aARLg4cOHDgWHNsIiqJrrztmAd5e3w1RMSBAwcOHCOOfUA+4yvfXhuZm/jHgQMHDhxnOfJlzcbO8oG2dultiBZ/BODAgQMHjkMc++ZaXoy1rca2YGufMjzjwoEDBw4cAUeyoNlIQT1esObIhy3eBi0OHDhw4Cg5NmNwswOnvNg7VS7mJSIOHDhw4LiDYxZgsyOlPAg3FVZxKIUDBw4cOA5xtNvelHnt0dFs6K19wfWWcODAgQPH5RNnEAlH21LMj6zyqG7XiQMHDhw4TnE8FteqcJo18hbExeQgDhw4cOAoOTZHR21Z1c5Z5CjtqormIA4cOHDgKDlmI2V5odWWYadG5fJdFB1THDhw4MAx4sgPinKgPJLzkvJs9BYVLQ4cOHDguHx6stV8pODUGMSsOJy9wh+agzhw4MCBY82xOUxq460uqMoibVYW4sCBAweOUxynmnTtkU8+JNEG9oHyDwcOHDhwLDie5TVjarcxaybOIjyqaHHgwIEDx7yrVoRTVA7Fad8eZbWF2aZ0xIEDBw4cLces6ZYf58wCtT2Oyu//4f8FDhw4cOA4xDFrz7WL2zcK25/W38KBAwcOHF/k2IwLzI6F2udu/izAgQMHDhy/y7EZgLiGaMuwTdPw7XwHDhw4cOBYc7TNwfy7bfjln2cRe8uxEw4cOHDgWAw0zJqGs9GHBLodjFsNyeHAgQMHjqv1/AFz2Cu9zb9QlgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
