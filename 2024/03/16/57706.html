@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Website mata -->
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<!-- Disable transformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<!-- Website description -->
+
+<meta name="description" content="博客新框架Flatpress尝试" />
+
+
+<!-- Website keywords -->
+
+
+
+
+<!-- Website rss -->
+
+<link rel="alternate" href="/atom.xml" title="杰克的博客" type="application/atom+xml">
+
+
+<!-- Website favicon -->
+
+<link rel="shortcut icon" type="image/x-icon" href="/favi.jpg?v=3.0.0" />
+
+
+<!-- Canonical, good for google search engine -->
+<link rel="canonical" href="https://jackwill.top/2024/03/16/57706.html" />
+
+<!-- Fancybox styling -->
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+<!-- MathJax (LaTeX) support -->
+
+
+<!-- Theme styling -->
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=3.0.0" />
+
+<!-- Analytics and push -->
+
+
+
+  
+
+
+
+<!-- LeanCloud Counter -->
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null,"server_url":null,"cdn":null},"toc":true,"fancybox":true,"latex":false};
+</script>
+  
+  <title>博客新框架Flatpress尝试 - 杰克的博客</title>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div class="scrollPercentage"></div>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">杰克的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+    <a href="/">
+      <li class="mobile-menu-item">
+        
+        
+        Home              </li>
+    </a>
+    
+    <a href="/archives/">
+      <li class="mobile-menu-item">
+        
+        
+        Archives              </li>
+    </a>
+    
+    <a href="/categories/">
+      <li class="mobile-menu-item">
+        
+        
+        Categories              </li>
+    </a>
+    
+    <a href="/friends/">
+      <li class="mobile-menu-item">
+        
+        
+        Friends              </li>
+    </a>
+    
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">  
+  <a href="/." class="logo">杰克的博客</a>  
+</div>  
+  
+<nav class="site-navbar">  
+    
+    <ul id="menu" class="menu">  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/">  
+              
+              
+              Home  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/archives/">  
+              
+              
+              Archives  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/categories/">  
+              
+              
+              Categories  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/friends/">  
+              
+              
+              Friends  
+              
+          </a>  
+        </li>  
+        
+    </ul>  
+    
+</nav>  
+
+    </header>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      博客新框架Flatpress尝试
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2024-03-16
+      </span>
+      
+      
+      
+    </div>
+  </header>
+
+  
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%A1%86%E6%9E%B6"><span class="toc-number">2.</span> <span class="toc-text">安装框架</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Install-LAMP-Server"><span class="toc-number">2.1.</span> <span class="toc-text">1. Install LAMP Server</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Install-FlatPress"><span class="toc-number">2.2.</span> <span class="toc-text">2. Install FlatPress</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Configure-Apache2"><span class="toc-number">2.3.</span> <span class="toc-text">3. Configure Apache2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Access-FlatPress-Web-Interface"><span class="toc-number">2.4.</span> <span class="toc-text">4. Access FlatPress Web Interface</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Flatpress%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96"><span class="toc-number">3.</span> <span class="toc-text">Flatpress博客美化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BD%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85"><span class="toc-number">3.1.</span> <span class="toc-text">1. 下载中文语言包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%A0%E9%99%A4footer"><span class="toc-number">3.2.</span> <span class="toc-text">2. 删除footer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%85%B6%E4%BB%96"><span class="toc-number">3.3.</span> <span class="toc-text">3. 其他</span></a></li></ol></li></ol>
+    </div>
+  </div>
+  
+
+  <div class="post-content">
+    
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前几天购入了一台VPS，搭建好了Halo2.0博客框架，自己和朋友都觉得挺满意的，比起以前Github上托管hexo搭建的静态博客不管是从写博客还是维护博客都方便了许多。但是还没过几天，可能是装了一款向搜索引擎推送url的插件，由于我每天只能向微软推送十条url，导致后续的url都推送失败，而默认的推送设置是每隔360分钟推送一次，导致程序陷入了死循环，造成了vps卡顿，网站也打不开了，而且，就在我写博客的时候，网站还是打不开。所以，我开始寻找下一个博客框架，我看到云风大佬应该是装的应该是Flatpress框架，自己也想试试，折腾折腾，一直没装成功，网络上中文的教程也很少，基本是翻译了官网的三句话教程</p>
+<ol>
+<li>Unzip FlatPress package and upload to your web server</li>
+<li>Browse to your web server, insert your data into the FlatPress installer</li>
+<li>Enjoy blogging with FlatPress!</li>
+</ol>
+<p>对于我这样的小白来说根本不够，不过，Vultr倒是给出了直接可以复制粘贴的教程Install FlatPress CMS on Ubuntu 20.04 LTS，我这边简单复制一下，再加上一些汉化、修改的东西。</p>
+<span id="more"></span>
+
+<h1 id="安装框架"><a href="#安装框架" class="headerlink" title="安装框架"></a>安装框架</h1><h2 id="1-Install-LAMP-Server"><a href="#1-Install-LAMP-Server" class="headerlink" title="1. Install LAMP Server"></a>1. Install LAMP Server</h2><p>Update system package manager.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+<p>Add the ppa:ondrej&#x2F;php PPA repository.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt -y install software-properties-common</span><br><span class="line">sudo add-apt-repository ppa:ondrej/php</span><br></pre></td></tr></table></figure>
+<p>Update system package manager.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+<p>Install PHP 7.4 and extra packages.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install apache2 php7.4 libapache2-mod-php7.4 php7.4-common php7.4-sqlite3 php7.4-json php7.4-curl php7.4-intl php7.4-mbstr</span><br></pre></td></tr></table></figure>
+<p>List available time zones and choose your preference.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo timedatectl list-timezones</span><br></pre></td></tr></table></figure>
+<p>Edit the PHP configuration file.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/php/7.4/apache2/php.ini</span><br></pre></td></tr></table></figure>
+<p>Change the following values, and replace <code>Africa/Nairobi</code>with your timezone save and close the file:</p>
+<p>To search for a specific line, use Control + W, enter search phrase then press Enter</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">max_execution_time = 600    </span><br><span class="line">memory_limit = 256M</span><br><span class="line">upload_max_filesize = 100M</span><br><span class="line">post_max_size = 100M</span><br><span class="line">max_input_time = 600</span><br><span class="line">date.timezone = Africa/Nairobi</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-Install-FlatPress"><a href="#2-Install-FlatPress" class="headerlink" title="2. Install FlatPress"></a>2. Install FlatPress</h2><p>Download the latest FlatPress installation files. To find the latest version, visit release page.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/flatpressblog/flatpress/archive/1.2.1.zip</span><br></pre></td></tr></table></figure>
+<p>Create the installation directory<code>/var/www/html/flatpress</code>.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /var/www/html/flatpress</span><br></pre></td></tr></table></figure>
+<p>Extract the downloaded files.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo unzip 1.2.1.zip</span><br></pre></td></tr></table></figure>
+<p>Move the files to the installation directory.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv flatpress-1.2.1/* /var/www/html/flatpress</span><br></pre></td></tr></table></figure>
+<p>Change ownership of the installation directory.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R www-data:www-data /var/www/html/flatpress/</span><br></pre></td></tr></table></figure>
+<p>Change access permissions for the directory.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod -R 755 /var/www/html/flatpress/</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-Configure-Apache2"><a href="#3-Configure-Apache2" class="headerlink" title="3. Configure Apache2"></a>3. Configure Apache2</h2><p>Create a new configuration file named flatpress.conf.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apache2/sites-available/flatpress.conf</span><br></pre></td></tr></table></figure>
+<p>Add the content below into the file and save it:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerAdmin admin@example.com</span><br><span class="line">    DocumentRoot /var/www/html/flatpress</span><br><span class="line">    ServerName example.com</span><br><span class="line">    ServerAlias www.example.com</span><br><span class="line"></span><br><span class="line">     &lt;Directory /var/www/html/flatpress/&gt;</span><br><span class="line">          Options FollowSymlinks</span><br><span class="line">          AllowOverride All</span><br><span class="line">          Require all granted</span><br><span class="line">     &lt;/Directory&gt;</span><br><span class="line"></span><br><span class="line">     ErrorLog $&#123;APACHE_LOG_DIR&#125;/error.log</span><br><span class="line">     CustomLog $&#123;APACHE_LOG_DIR&#125;/access.log combined</span><br><span class="line">    </span><br><span class="line">     &lt;Directory /var/www/html/flatpress/&gt;</span><br><span class="line">            RewriteEngine on</span><br><span class="line">            RewriteBase /</span><br><span class="line">            RewriteCond %&#123;REQUEST_FILENAME&#125; !-f</span><br><span class="line">            RewriteRule ^(.*) index.php [PT,L]</span><br><span class="line">    &lt;/Directory&gt;</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<p>Change to Apache configuration files directory.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/apache2/sites-available/</span><br></pre></td></tr></table></figure>
+
+<p>Enable the created virtual host configuration.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo a2ensite flatpress.conf</span><br></pre></td></tr></table></figure>
+<p>Disable the default Apache configuration.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo a2dissite 000-default.conf</span><br></pre></td></tr></table></figure>
+<p>Enable the Apache rewrite module.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo a2enmod rewrite</span><br></pre></td></tr></table></figure>
+<p>Restart Apache service for the changes to take effect.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart apache2</span><br></pre></td></tr></table></figure>
+<h2 id="4-Access-FlatPress-Web-Interface"><a href="#4-Access-FlatPress-Web-Interface" class="headerlink" title="4. Access FlatPress Web Interface"></a>4. Access FlatPress Web Interface</h2><p>Open your web browser and browse to <code>http://Server_IP</code>. For example: <code>http://192.0.2.10/</code><br>至此，Flatpress框架已经安装完成，剩下的工作就是用反代工具，使用域名访问博客网址了。</p>
+<h1 id="Flatpress博客美化"><a href="#Flatpress博客美化" class="headerlink" title="Flatpress博客美化"></a>Flatpress博客美化</h1><h2 id="1-下载中文语言包"><a href="#1-下载中文语言包" class="headerlink" title="1. 下载中文语言包"></a>1. 下载中文语言包</h2><p>直接用<code>wget</code>下载语言包，将<code>fp-interface</code>文件中的<code>zh-cn</code>文件夹移动到<code>/var/www/html/flatpress/fp-interface/lang</code>文件夹就行了</p>
+<h2 id="2-删除footer"><a href="#2-删除footer" class="headerlink" title="2. 删除footer"></a>2. 删除footer</h2><p>就是博客最底下的<code>This blog is proudly powered by FlatPress.</code><br>只需要找到<code>flatpress/fp-interface/themes/leggero/footer.tpl</code>文件，简单粗暴地把这行删除即可</p>
+<h2 id="3-其他"><a href="#3-其他" class="headerlink" title="3. 其他"></a>3. 其他</h2><p>剩下的例如修改主页部件、修改博客名等操作和别的博客框架类似，这里不再赘述了。</p>
+
+    
+  </div>
+
+  
+  <!-- Post Copyright -->
+
+    
+
+  
+
+  
+  <footer class="post-footer">
+    
+      
+  <nav class="post-nav">  
+      
+      <a class="prev" href="/2024/04/07/15692.html">  
+        <i class="iconfont icon-left"></i>  
+        <span class="prev-text nav-default">自建RSShub和TinyTinyRSS</span>  
+        <span class="prev-text nav-mobile">Prev</span>  
+      </a>  
+      
+      
+      <a class="next" href="/2024/03/11/20269.html">  
+        <span class="next-text nav-default">Zotero APA 7th 中文CSL引文样式修改</span>  
+        <span class="prev-text nav-mobile">Next</span>  
+        <i class="iconfont icon-right"></i>  
+      </a>  
+      
+  </nav>  
+  
+
+  </footer>
+  
+
+</article>
+        </div>
+          
+  <div class="comments" id="comments">  
+      
+      <div id="utterances-container"></div>  
+      
+  </div>  
+  
+
+      </div>
+    </main>
+    <footer id="footer" class="footer">
+      <!-- Social Links -->
+
+<div class="social-links">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <a target="_blank" rel="noopener" href="https://github.com/wujackwill" class="iconfont icon-github" title="github"></a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+  
+</div>
+
+
+
+<div class="copyright">
+
+
+
+</div>
+    </footer>
+    <div class="back-to-top" id="back-to-top"> <i class="iconfont icon-up"></i> </div>
+  </div>
+    
+    
+    
+    
+    
+  
+<script>
+  var container = document.getElementById('utterances-container');
+  var script = document.createElement('script');
+  script.src = 'https://utteranc.es/client.js';
+  script.setAttribute('repo', 'wujackwill/wujackwill.github.io');
+  script.setAttribute('issue-term', 'title');
+  script.setAttribute('theme', 'github-dark');
+  script.setAttribute('label', 'utterances');
+  script.crossorigin = 'anonymous';
+  script.async = true;
+
+  container.appendChild(script);
+</script>
+  
+    
+  
+
+  
+
+
+
+
+
+
+
+<script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+
+
+
+<script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+
+
+
+<script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/even.js?v=3.0.0"></script>
+</body>
+
+</html>
