@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Website mata -->
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<!-- Disable transformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<!-- Website description -->
+
+<meta name="description" content="R语言作业" />
+
+
+<!-- Website keywords -->
+
+
+
+
+<!-- Website rss -->
+
+<link rel="alternate" href="/atom.xml" title="杰克的博客" type="application/atom+xml">
+
+
+<!-- Website favicon -->
+
+<link rel="shortcut icon" type="image/x-icon" href="/favi.jpg?v=3.0.0" />
+
+
+<!-- Canonical, good for google search engine -->
+<link rel="canonical" href="https://jackwill.top/2024/03/10/48322.html" />
+
+<!-- Fancybox styling -->
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+<!-- MathJax (LaTeX) support -->
+
+
+<!-- Theme styling -->
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=3.0.0" />
+
+<!-- Analytics and push -->
+
+
+
+  
+
+
+
+<!-- LeanCloud Counter -->
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null,"server_url":null,"cdn":null},"toc":true,"fancybox":true,"latex":false};
+</script>
+  
+  <title>R语言作业 - 杰克的博客</title>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div class="scrollPercentage"></div>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">杰克的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+    <a href="/">
+      <li class="mobile-menu-item">
+        
+        
+        Home              </li>
+    </a>
+    
+    <a href="/archives/">
+      <li class="mobile-menu-item">
+        
+        
+        Archives              </li>
+    </a>
+    
+    <a href="/categories/">
+      <li class="mobile-menu-item">
+        
+        
+        Categories              </li>
+    </a>
+    
+    <a href="/friends/">
+      <li class="mobile-menu-item">
+        
+        
+        Friends              </li>
+    </a>
+    
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">  
+  <a href="/." class="logo">杰克的博客</a>  
+</div>  
+  
+<nav class="site-navbar">  
+    
+    <ul id="menu" class="menu">  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/">  
+              
+              
+              Home  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/archives/">  
+              
+              
+              Archives  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/categories/">  
+              
+              
+              Categories  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/friends/">  
+              
+              
+              Friends  
+              
+          </a>  
+        </li>  
+        
+    </ul>  
+    
+</nav>  
+
+    </header>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      R语言作业
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2024-03-10
+      </span>
+      
+      
+      
+    </div>
+  </header>
+
+  
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85R%E8%AF%AD%E8%A8%80%E5%92%8CRstudio"><span class="toc-number">2.1.</span> <span class="toc-text">1. 安装R语言和Rstudio</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85bibliometrix"><span class="toc-number">2.2.</span> <span class="toc-text">2. 安装bibliometrix</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AF%BC%E5%85%A5web-of-science%E6%96%87%E7%8C%AE"><span class="toc-number">2.3.</span> <span class="toc-text">3. 导入web of science文献</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-biblioshiny%E5%81%9A%E5%9B%BE"><span class="toc-number">2.4.</span> <span class="toc-text">4. biblioshiny做图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">2.4.1.</span> <span class="toc-text">4.1. 导入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%81%9A%E5%9B%BE"><span class="toc-number">2.4.2.</span> <span class="toc-text">4.2 做图</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </div>
+  
+
+  <div class="post-content">
+    
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>学校论文课需要用R和RSutdio完成制图，做个简单下载，安装的记录和简单教程。</p>
+<span id="more"></span>
+
+
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="1-安装R语言和Rstudio"><a href="#1-安装R语言和Rstudio" class="headerlink" title="1. 安装R语言和Rstudio"></a>1. 安装R语言和Rstudio</h2><p>安装R：进入r语言官网下载页面，点击<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/windows/base/">Download R for Windows</a>选择base，下载安装</p>
+<p><img src="https://economists1.oss-cn-beijing.aliyuncs.com/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/Pasted%20image%2020231127103529.png"></p>
+<p>安装Rsutdio： 进入<a target="_blank" rel="noopener" href="https://posit.co/download/rstudio-desktop/">下载页面</a>,选择<a target="_blank" rel="noopener" href="https://download1.rstudio.org/electron/windows/RStudio-2023.09.1-494.exe">Download RStudio Desktop for windows</a>，下载安装</p>
+<p><img src="https://economists1.oss-cn-beijing.aliyuncs.com/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/Pasted%20image%2020231127101048.png"></p>
+<h2 id="2-安装bibliometrix"><a href="#2-安装bibliometrix" class="headerlink" title="2. 安装bibliometrix"></a>2. 安装bibliometrix</h2><p>打开Rstudio，点击file，New file, R script</p>
+<p><img src="https://economists1.oss-cn-beijing.aliyuncs.com/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/Pasted%20image%2020231127101301.png"></p>
+<p>复制以下代码，粘贴到Rstudio</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">install.packages(&quot;bibliometrix&quot;, dependecies = true) #安装bibliometrix</span><br><span class="line"></span><br><span class="line">library(bibliometrix) # 导入bibliometrix包</span><br><span class="line"></span><br><span class="line">biblioshiny() #导入程序</span><br></pre></td></tr></table></figure>
+<p>鼠标指针移动到第一行，点击Run逐行运行代码,出现下载的程序包在….证明安装成功</p>
+<p><img src="https://economists1.oss-cn-beijing.aliyuncs.com/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/Pasted%20image%2020231127101534.png"></p>
+<p>三行代码运行完，如果浏览器弹出下图，则安装成功</p>
+<p><img src="https://economists1.oss-cn-beijing.aliyuncs.com/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/Pasted%20image%2020231126222152.png"></p>
+<p>最后，将文件保存到桌面</p>
+<p><img src="https://economists1.oss-cn-beijing.aliyuncs.com/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/Pasted%20image%2020231127101750.png"><br>输入文件名，点击确定</p>
+<p><img src="https://economists1.oss-cn-beijing.aliyuncs.com/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/Pasted%20image%2020231127101900.png"></p>
+<h2 id="3-导入web-of-science文献"><a href="#3-导入web-of-science文献" class="headerlink" title="3. 导入web of science文献"></a>3. 导入web of science文献</h2><p>登入学校wos网站或者别的图书馆资源<br>database一定选择web of science core collection，不然不能导出bibtex格式</p>
+<p><img src="https://economists1.oss-cn-beijing.aliyuncs.com/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/Pasted%20image%2020231127104607.png"></p>
+<p>输入主题，开始检索，导出为bibtex格式</p>
+<p><img src="https://economists1.oss-cn-beijing.aliyuncs.com/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/Pasted%20image%2020231127104134.png"></p>
+<p><img src="https://economists1.oss-cn-beijing.aliyuncs.com/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/Pasted%20image%2020231127100352.png"></p>
+<p>左侧Refine results可以调整搜索结果，按自己研究筛选结果</p>
+<p><img src="https://economists1.oss-cn-beijing.aliyuncs.com/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/Pasted%20image%2020231127104226.png"></p>
+<p>以只要2023年研究为例，点击Publication Years中的2023，再点击Refine即可</p>
+<p><img src="https://economists1.oss-cn-beijing.aliyuncs.com/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/Pasted%20image%2020231127104420.png"></p>
+<p>一次只能导出50个结果，第一次导出1-50，第二次51-100，以此类推，记得每次勾选full record and cited references</p>
+<p><img src="https://economists1.oss-cn-beijing.aliyuncs.com/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/Pasted%20image%2020231127100548.png"></p>
+<p>一个bibtex即可导入，如有多个，将bib文件全部压缩为zip压缩包一起导入到biblioshiny</p>
+<h2 id="4-biblioshiny做图"><a href="#4-biblioshiny做图" class="headerlink" title="4. biblioshiny做图"></a>4. biblioshiny做图</h2><h3 id="4-1-导入数据"><a href="#4-1-导入数据" class="headerlink" title="4.1. 导入数据"></a>4.1. 导入数据</h3><p>依次选择左侧按钮Data，Import raw file(s)，Web of Science (WoS&#x2F;WoK)，最后点击Broswe选择文件</p>
+<p><img src="https://economists1.oss-cn-beijing.aliyuncs.com/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/Pasted%20image%2020231127103128.png"><br>选择一个bib文件或者zip文件，点击打开<br><img src="https://economists1.oss-cn-beijing.aliyuncs.com/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/Pasted%20image%2020231127102246.png"></p>
+<p>以zip文件为例，点击start</p>
+<p><img src="https://economists1.oss-cn-beijing.aliyuncs.com/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/Pasted%20image%2020231127102346.png"></p>
+<p>导入成功，点击close<br><img src="https://economists1.oss-cn-beijing.aliyuncs.com/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/Pasted%20image%2020231127102602.png"></p>
+<h3 id="4-2-做图"><a href="#4-2-做图" class="headerlink" title="4.2 做图"></a>4.2 做图</h3><p>以论文中此图为例</p>
+<p><img src="https://economists1.oss-cn-beijing.aliyuncs.com/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/Pasted%20image%2020231127102753.png"></p>
+<p>依次点击，生成图片</p>
+<p><img src="https://economists1.oss-cn-beijing.aliyuncs.com/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/Pasted%20image%2020231127102906.png"><br>点击图表，下载图片，有的图片直接点击会卡死，如果卡死，重新运行代码、导入数据，直接截图就行</p>
+<p><img src="https://economists1.oss-cn-beijing.aliyuncs.com/R%E8%AF%AD%E8%A8%80%E4%BD%9C%E4%B8%9A/Pasted%20image%2020231127102943.png"></p>
+<p>照着范文，修改为自己的内容、数据，最后调整论文格式</p>
+
+    
+  </div>
+
+  
+  <!-- Post Copyright -->
+
+    
+
+  
+
+  
+  <footer class="post-footer">
+    
+      
+  <nav class="post-nav">  
+      
+      <a class="prev" href="/2024/03/11/38619.html">  
+        <i class="iconfont icon-left"></i>  
+        <span class="prev-text nav-default">用Rust开发一个命令行todo app</span>  
+        <span class="prev-text nav-mobile">Prev</span>  
+      </a>  
+      
+      
+      <a class="next" href="/2024/02/27/62237.html">  
+        <span class="next-text nav-default">2024博客重构</span>  
+        <span class="prev-text nav-mobile">Next</span>  
+        <i class="iconfont icon-right"></i>  
+      </a>  
+      
+  </nav>  
+  
+
+  </footer>
+  
+
+</article>
+        </div>
+          
+  <div class="comments" id="comments">  
+      
+      <div id="utterances-container"></div>  
+      
+  </div>  
+  
+
+      </div>
+    </main>
+    <footer id="footer" class="footer">
+      <!-- Social Links -->
+
+<div class="social-links">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <a target="_blank" rel="noopener" href="https://github.com/wujackwill" class="iconfont icon-github" title="github"></a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+  
+</div>
+
+
+
+<div class="copyright">
+
+
+
+</div>
+    </footer>
+    <div class="back-to-top" id="back-to-top"> <i class="iconfont icon-up"></i> </div>
+  </div>
+    
+    
+    
+    
+    
+  
+<script>
+  var container = document.getElementById('utterances-container');
+  var script = document.createElement('script');
+  script.src = 'https://utteranc.es/client.js';
+  script.setAttribute('repo', 'wujackwill/wujackwill.github.io');
+  script.setAttribute('issue-term', 'title');
+  script.setAttribute('theme', 'github-dark');
+  script.setAttribute('label', 'utterances');
+  script.crossorigin = 'anonymous';
+  script.async = true;
+
+  container.appendChild(script);
+</script>
+  
+    
+  
+
+  
+
+
+
+
+
+
+
+<script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+
+
+
+<script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+
+
+
+<script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/even.js?v=3.0.0"></script>
+</body>
+
+</html>
