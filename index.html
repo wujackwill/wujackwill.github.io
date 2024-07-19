@@ -1,689 +1,500 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" color-mode="light">
 
-<head>
-  <!-- Website mata -->
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Jack Will" />
+  <!-- Open Graph Description 简短摘要-->
+  
+  <!-- 用于搜索引擎的文章摘要 -->
+  
+  
+  
+  <title>
+    
+     夜航船
+  </title>
 
-<!-- Disable transformation -->
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+  
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
+  
 
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
-<!-- Website description -->
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
 
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
 
-<!-- Website keywords -->
-
-
-
-
-<!-- Website rss -->
-
-<link rel="alternate" href="/atom.xml" title="夜航船" type="application/atom+xml">
-
-
-<!-- Website favicon -->
-
-<link rel="shortcut icon" type="image/x-icon" href="/favi.jpg?v=3.0.0" />
-
-
-<!-- Canonical, good for google search engine -->
-<link rel="canonical" href="https://jackwill.top/" />
-
-<!-- Fancybox styling -->
-
-<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
-
-
-<!-- MathJax (LaTeX) support -->
-
-
-<!-- Theme styling -->
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=3.0.0" />
-
-<!-- Analytics and push -->
-
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
 
 
   
 
-
-
-<!-- LeanCloud Counter -->
-
-
-<script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null,"server_url":null,"cdn":null},"toc":true,"fancybox":true,"latex":false};
-</script>
   
-  <title>夜航船</title>
 
-<meta name="generator" content="Hexo 7.3.0"></head>
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="夜航船" type="application/atom+xml">
+</head>
 
-<body>
-  <div class="scrollPercentage"></div>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/." class="logo">夜航船</a>
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/images/avatar.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">Oranges</a></div>
   </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
   </div>
 </div>
 
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <div class="container index">
+  <div class="post-list">
+    <!-- 遍历渲染文章 -->
     
-    <a href="/">
-      <li class="mobile-menu-item">
-        
-        
-        Home              </li>
-    </a>
-    
-    <a href="/archives/">
-      <li class="mobile-menu-item">
-        
-        
-        Archives              </li>
-    </a>
-    
-    <a href="/categories/">
-      <li class="mobile-menu-item">
-        
-        
-        Categories              </li>
-    </a>
-    
-    <a href="/friends/">
-      <li class="mobile-menu-item">
-        
-        
-        Friends              </li>
-    </a>
-    
-  </ul>
-</nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-      <div class="logo-wrapper">  
-  <a href="/." class="logo">夜航船</a>  
-</div>  
-  
-<nav class="site-navbar">  
-    
-    <ul id="menu" class="menu">  
-        
-        <li class="menu-item">  
-          <a class="menu-item-link" href="/">  
+      <div class="post-item" title="从《什么才是你的不可替代性和核心竞争力》说起">
+        <div class="time-m-d">2024-07-16</div>
+        <div class="title">
+          <a href="/2024/07/16/13792.html">
+            
               
+                <span>从《什么才是你的不可替代性和核心竞争力》说起</span>
               
-              Home  
-              
-          </a>  
-        </li>  
-        
-        <li class="menu-item">  
-          <a class="menu-item-link" href="/archives/">  
-              
-              
-              Archives  
-              
-          </a>  
-        </li>  
-        
-        <li class="menu-item">  
-          <a class="menu-item-link" href="/categories/">  
-              
-              
-              Categories  
-              
-          </a>  
-        </li>  
-        
-        <li class="menu-item">  
-          <a class="menu-item-link" href="/friends/">  
-              
-              
-              Friends  
-              
-          </a>  
-        </li>  
-        
-    </ul>  
-    
-</nav>  
-
-    </header>
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <section id="posts" class="posts">
-  
-  
-  
-  <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/2024/07/16/13792.html">从《什么才是你的不可替代性和核心竞争力》说起</a>
-      
-    </h1>
-
-    <div class="post-meta">
-      <span class="post-time">
-        2024-07-16
-      </span>
-      
-      
-      
-    </div>
-  </header>
-
-  
-
-  <div class="post-content">
-    
-    
-    
-    
-    
-
-    
-    <p>这段时间放假，没有事的时候我就读读别人的博客，读读书，折腾折腾软件配置。偶然从Obsidian以前的网页裁剪里淘到一篇《什么才是你的不可替代性和核心竞争》，是刘未鹏老师博客上的一篇好文。</p>
-<p>文章里这样写到：</p>
-<blockquote>
-<p>长话短说，<strong>我相信以下的知识技能组合是具有相当程度的不可替代性的</strong>：</p>
-<ol>
-<li><strong>专业领域技能</strong>：成为一个专业领域的专家，你的专业技能越强，在这个领域的不可替代性就越高。这个自是不用多说的。</li>
-<li><strong>跨领域的技能</strong>：解决问题的能力，创新思维，判断与决策能力，Critical-Thinking，表达沟通能力，Open Mind 等等。</li>
-<li><strong>学习能力</strong>：严格来说学习能力也属于跨领域的技能，但由于实在太重要，并且跨任何领域，所以独立出来。如何培养学习能力，到目前为止我所知道的最有效的办法就是持续学习和思考新知识。</li>
-<li><strong>性格要素</strong>：严格来说这也属于跨领域技能，理由同上。一些我相信很重要的性格要素包括：专注、持之以恒、自省（意识到自己的问题所在的能力，这是改进自身的大前提）、好奇心、自信、谦卑（自信和谦卑是不悖的，前者是相信别人能够做到的自己也能够做到，后者是不要总认为自己确信正确的就一定是正确的，Keep an open mind）等等。</li>
-</ol>
-</blockquote>
-    <div class="read-more">
-      <a href="/2024/07/16/13792.html" class="read-more-link">Read more..</a>
-    </div>
-    
-    
-  </div>
-
-  
-
-  
-
-</article>
-  
-  <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/2024/04/07/15692.html">自建RSShub和TinyTinyRSS</a>
-      
-    </h1>
-
-    <div class="post-meta">
-      <span class="post-time">
-        2024-04-07
-      </span>
-      
-      
-      
-    </div>
-  </header>
-
-  
-
-  <div class="post-content">
-    
-    
-    
-    
-    
-
-    
-    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>旧闻RSS大名，但是现在的RSS阅读器要么收费，要么功能太简单，因此，自己搭建一个RSS服务再好不过了。我选择了TinyTinyRSS，FreshRSS听说也不错，功能大体都差不多，以前用过TinyTinyRSS就懒得再改了。</p>
-    <div class="read-more">
-      <a href="/2024/04/07/15692.html" class="read-more-link">Read more..</a>
-    </div>
-    
-    
-  </div>
-
-  
-
-  
-
-</article>
-  
-  <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/2024/03/16/57706.html">博客新框架Flatpress尝试</a>
-      
-    </h1>
-
-    <div class="post-meta">
-      <span class="post-time">
-        2024-03-16
-      </span>
-      
-      
-      
-    </div>
-  </header>
-
-  
-
-  <div class="post-content">
-    
-    
-    
-    
-    
-
-    
-    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前几天购入了一台VPS，搭建好了Halo2.0博客框架，自己和朋友都觉得挺满意的，比起以前Github上托管hexo搭建的静态博客不管是从写博客还是维护博客都方便了许多。但是还没过几天，可能是装了一款向搜索引擎推送url的插件，由于我每天只能向微软推送十条url，导致后续的url都推送失败，而默认的推送设置是每隔360分钟推送一次，导致程序陷入了死循环，造成了vps卡顿，网站也打不开了，而且，就在我写博客的时候，网站还是打不开。所以，我开始寻找下一个博客框架，我看到云风大佬应该是装的应该是Flatpress框架，自己也想试试，折腾折腾，一直没装成功，网络上中文的教程也很少，基本是翻译了官网的三句话教程</p>
-<ol>
-<li>Unzip FlatPress package and upload to your web server</li>
-<li>Browse to your web server, insert your data into the FlatPress installer</li>
-<li>Enjoy blogging with FlatPress!</li>
-</ol>
-<p>对于我这样的小白来说根本不够，不过，Vultr倒是给出了直接可以复制粘贴的教程Install FlatPress CMS on Ubuntu 20.04 LTS，我这边简单复制一下，再加上一些汉化、修改的东西。</p>
-    <div class="read-more">
-      <a href="/2024/03/16/57706.html" class="read-more-link">Read more..</a>
-    </div>
-    
-    
-  </div>
-
-  
-
-  
-
-</article>
-  
-  <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/2024/03/11/20269.html">Zotero APA 7th 中文CSL引文样式修改</a>
-      
-    </h1>
-
-    <div class="post-meta">
-      <span class="post-time">
-        2024-03-11
-      </span>
-      
-      
-      
-    </div>
-  </header>
-
-  
-
-  <div class="post-content">
-    
-    
-    
-    
-    
-
-    
-    <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>最近开始做毕业论文了，以前用的CSL样式都是用随便选的，基本上是倾向于哪个好看用哪个，然后用Zotero自动插入到Word里面，但是问题是学校要求的APA格式，与Zotero自带的APA格式不一样。</p>
-<p>主要问题有：</p>
-<ol>
-<li>Zotero自带的APA格式，附带DOI，而学校不要求</li>
-<li>学校要求英文的期号要斜体，中文的期刊名字要斜体，而卷次、期号不要斜体，跟Zotero自带的APA格式不一样</li>
-<li>学习要求的引文前面带序号，而Zotero自带的APA格式没有序号</li>
-<li>Zotero自带的APA格式，中文和英文字体都是等线，学校要求中文是宋体，英文是Times New Roman</li>
-</ol>
-    <div class="read-more">
-      <a href="/2024/03/11/20269.html" class="read-more-link">Read more..</a>
-    </div>
-    
-    
-  </div>
-
-  
-
-  
-
-</article>
-  
-  <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/2024/03/11/38619.html">用Rust开发一个命令行todo app</a>
-      
-    </h1>
-
-    <div class="post-meta">
-      <span class="post-time">
-        2024-03-11
-      </span>
-      
-      
-      
-    </div>
-  </header>
-
-  
-
-  <div class="post-content">
-    
-    
-    
-    
-    
-
-    
-    <h1 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h1><p>之前看过一篇文章叫<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/338819806?utm_id=0">如何用滴答清单进行时间管理？</a>，很有启发，但是，本着如无必要，勿增实体的原则，我不想再手机和电脑上再下一个app，或者使用网页版(其实是手机多下软件会卡顿)，又正好再学Rust，就想着用Rust开发一个简单的命令行todo app，当然了，我需求很少，app也很简单。基础的增加、修改、删除任务的功能必不可少，更重要的是，我想要一个同步功能，这样就可以在手机上添加任务，同步到电脑上了。我没有选择webdav同比，因为那样我就要用坚果云之类的同步软件，我直接用了Resilo Sync，这样就不用再下别的软件(我已经在用这个软件了)。</p>
-    <div class="read-more">
-      <a href="/2024/03/11/38619.html" class="read-more-link">Read more..</a>
-    </div>
-    
-    
-  </div>
-
-  
-
-  
-
-</article>
-  
-  <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/2024/03/10/48322.html">R语言作业</a>
-      
-    </h1>
-
-    <div class="post-meta">
-      <span class="post-time">
-        2024-03-10
-      </span>
-      
-      
-      
-    </div>
-  </header>
-
-  
-
-  <div class="post-content">
-    
-    
-    
-    
-    
-
-    
-    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>学校论文课需要用R和RSutdio完成制图，做个简单下载，安装的记录和简单教程。</p>
-    <div class="read-more">
-      <a href="/2024/03/10/48322.html" class="read-more-link">Read more..</a>
-    </div>
-    
-    
-  </div>
-
-  
-
-  
-
-</article>
-  
-  <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/2024/02/27/62237.html">2024博客重构</a>
-      
-    </h1>
-
-    <div class="post-meta">
-      <span class="post-time">
-        2024-02-27
-      </span>
-      
-      
-      
-    </div>
-  </header>
-
-  
-
-  <div class="post-content">
-    
-    
-    
-    
-    
-
-    
-    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>寒假里写了一篇博客，叫2024博客重构，用的方法是，先用markdown写作，再用pandoc把所有的markdown文件转换成html，然后让Github Pgaes部署，好处是轻量、方便，但是有几个功能很繁琐。</p>
-<ul>
-<li>RSS订阅很麻烦，而Hexo框架有现成的插件</li>
-<li>评论系统无从下手，手搓加入现成的方案很麻烦</li>
-<li>站点地图需要手动生成</li>
-<li>生成的网页在加入搜索引擎的时候会报网页缺少meta description数据等错误</li>
-</ul>
-<p>所以最好的方案还是转用Hexo</p>
-    <div class="read-more">
-      <a href="/2024/02/27/62237.html" class="read-more-link">Read more..</a>
-    </div>
-    
-    
-  </div>
-
-  
-
-  
-
-</article>
-  
-  <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/2024/02/01/47170.html">记excel2eprime包开发</a>
-      
-    </h1>
-
-    <div class="post-meta">
-      <span class="post-time">
-        2024-02-01
-      </span>
-      
-      
-      
-    </div>
-  </header>
-
-  
-
-  <div class="post-content">
-    
-    
-    
-    
-    
-
-    
-    <h1 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h1><p>做语言学实验的时候，通常会用到E-prime软件，用软件把实验材料编制成可以运行的程序并不那么复杂，复杂的是把实验句在Excel中分好再导入到E-prime中，这个过程很麻烦，而且容易出错，之前我用R写过一个小脚本用来处理实验句，但是还不成熟，功能不全，不足以使用，经过一段时间的学习，我写了一个R包，实现了自动分句。</p>
-    <div class="read-more">
-      <a href="/2024/02/01/47170.html" class="read-more-link">Read more..</a>
-    </div>
-    
-    
-  </div>
-
-  
-
-  
-
-</article>
-  
-  <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/2023/11/29/25413.html">2023年Neovim配置</a>
-      
-    </h1>
-
-    <div class="post-meta">
-      <span class="post-time">
-        2023-11-29
-      </span>
-      
-      
-      
-    </div>
-  </header>
-
-  
-
-  <div class="post-content">
-    
-    
-    
-    
-    
-
-    
-    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>2021年的时候写过一篇windows系统下Neovim的安装、配置教程，两年过去了，我的配置文件升了个级，做个记录：</p>
-<ul>
-<li>从coc转为lsp</li>
-<li>弃用nerdtree</li>
-<li>使用WSL下的Neovim</li>
-<li>从Vim-plug转为lazy.nvim管理插件</li>
-<li>从vimscript转为lua写配置文件</li>
-</ul>
-    <div class="read-more">
-      <a href="/2023/11/29/25413.html" class="read-more-link">Read more..</a>
-    </div>
-    
-    
-  </div>
-
-  
-
-  
-
-</article>
-  
-    
-  <nav class="pagination">  
-      
-      
-  </nav>  
-  
-
-  
-</section>
+            
+          </a>
         </div>
+      </div>
+    
+      <div class="post-item" title="自建RSShub和TinyTinyRSS">
+        <div class="time-m-d">2024-04-07</div>
+        <div class="title">
+          <a href="/2024/04/07/15692.html">
+            
+              
+                <span>自建RSShub和TinyTinyRSS</span>
+              
+            
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="博客新框架Flatpress尝试">
+        <div class="time-m-d">2024-03-16</div>
+        <div class="title">
+          <a href="/2024/03/16/57706.html">
+            
+              
+                <span>博客新框架Flatpress尝试</span>
+              
+            
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="Zotero APA 7th 中文CSL引文样式修改">
+        <div class="time-m-d">2024-03-11</div>
+        <div class="title">
+          <a href="/2024/03/11/20269.html">
+            
+              
+                <span>Zotero APA 7th 中文CSL引文样式修改</span>
+              
+            
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="用Rust开发一个命令行todo app">
+        <div class="time-m-d">2024-03-11</div>
+        <div class="title">
+          <a href="/2024/03/11/38619.html">
+            
+              
+                <span>用Rust开发一个命令行todo app</span>
+              
+            
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="R语言作业">
+        <div class="time-m-d">2024-03-10</div>
+        <div class="title">
+          <a href="/2024/03/10/48322.html">
+            
+              
+                <span>R语言作业</span>
+              
+            
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="2024博客重构">
+        <div class="time-m-d">2024-02-27</div>
+        <div class="title">
+          <a href="/2024/02/27/62237.html">
+            
+              
+                <span>2024博客重构</span>
+              
+            
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="记excel2eprime包开发">
+        <div class="time-m-d">2024-02-01</div>
+        <div class="title">
+          <a href="/2024/02/01/47170.html">
+            
+              
+                <span>记excel2eprime包开发</span>
+              
+            
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="2023年Neovim配置">
+        <div class="time-m-d">2023-11-29</div>
+        <div class="title">
+          <a href="/2023/11/29/25413.html">
+            
+              
+                <span>2023年Neovim配置</span>
+              
+            
+          </a>
+        </div>
+      </div>
+    
+  </div>
+  <nav class="post-navigation">
+    
+    <span class="page-num">1 / 1</span>
+    
+  </nav>
+</div>
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
           
+              <a title="github" target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">
+                <i class="iconfont icon-github"></i>
+              </a>
+              
+        </li>
+        
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2024 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+</div>
 
       </div>
-    </main>
-    <footer id="footer" class="footer">
-      <!-- Social Links -->
 
-<div class="social-links">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <a target="_blank" rel="noopener" href="https://github.com/wujackwill" class="iconfont icon-github" title="github"></a>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-  <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-  
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
 </div>
 
 
-
-<div class="copyright">
-
+<script src="/js/backtotop.js"></script>
 
 
-</div>
-    </footer>
-    <div class="back-to-top" id="back-to-top"> <i class="iconfont icon-up"></i> </div>
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
   </div>
-    
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="Search...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
 
   
+<script src="/js/colorscheme.js"></script>
 
 
 
 
 
-
-
-<script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
-
-
-
-<script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+        
+  
+  
+<script src="/js/shares.js"></script>
 
 
 
-<script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-  <script type="text/javascript" src="/js/src/even.js?v=3.0.0"></script>
-</body>
-
+      </div>
+    </div>
+  </body>
 </html>
