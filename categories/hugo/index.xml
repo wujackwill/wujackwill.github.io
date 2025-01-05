@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Jack&#39;s BLOG</title>
+    <link>/categories/hugo/</link>
+    <description>Recent content in Hugo on Jack&#39;s BLOG</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <atom:link href="/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction</title>
+      <link>/docs/01-intro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/01-intro/</guid>
+      <description>&lt;p&gt;The Hugo Paged theme was inspired by &lt;a href=&#34;https://pagedjs.org&#34;&gt;the paged.js website&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-pagedjs-website&#34;&gt;The paged.js website&lt;/h2&gt;&#xA;&lt;p&gt;The paged.js library is awesome. Its website is also beautiful.&lt;/p&gt;&#xA;&lt;h3 id=&#34;the-crop-marks&#34;&gt;The crop marks&lt;/h3&gt;&#xA;&lt;p&gt;I love the crop marks. I couldn&amp;rsquo;t imagine that they were made from three rectangles:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div class=&amp;quot;crop-h&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;!-- horizontal lines --&amp;gt;&#xA;&amp;lt;div class=&amp;quot;crop-v&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;!-- vertical lines --&amp;gt;&#xA;&amp;lt;div class=&amp;quot;crop-c&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;!-- cover some segments --&amp;gt;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Make their position absolute, and shrink them a little bit:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

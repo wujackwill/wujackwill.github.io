@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Zotero APA格式调整 - Jack&#39;s BLOG</title>
+    <meta property="og:title" content="Zotero APA格式调整 - Jack&#39;s BLOG">
+    
+    <meta name="twitter:card" content="summary">
+    
+      
+      <meta property="description" content="最近开始写毕业论文了，但是发现插入论文的引用实在是太麻烦了。借助Zotero的帮助，可以直接插入APA格式的引用，但是格式又与学校要求的APA格式有所不同，虽然可以在这个网站进行可视化的修改，但是还是不能完全满足我的要求，于是我想了个办法，在网站里把我能修改的部分比如去掉DOI和序号做好，再在Word里面，通过宏把相关的格式修改好，详细教程可以看这。当然，有个问题是我完全不会用宏，就让GPT帮我写 &amp;hellip;">
+      <meta property="og:description" content="最近开始写毕业论文了，但是发现插入论文的引用实在是太麻烦了。借助Zotero的帮助，可以直接插入APA格式的引用，但是格式又与学校要求的APA格式有所不同，虽然可以在这个网站进行可视化的修改，但是还是不能完全满足我的要求，于是我想了个办法，在网站里把我能修改的部分比如去掉DOI和序号做好，再在Word里面，通过宏把相关的格式修改好，详细教程可以看这。当然，有个问题是我完全不会用宏，就让GPT帮我写 &amp;hellip;">
+      
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/css/fonts.css">
+    
+    <link rel="stylesheet" href="/css/custom.css">
+    
+    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css">
+
+  </head>
+
+  
+  
+  
+  <body class="single blog">
+    <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
+    <nav class="nav-top small">
+    <div class="logo">
+    
+    </div>
+    <div class="menu"><span class="active"><a href="/blog/">Blog</a></span>
+      <span><a href="/search/">Search</a></span>
+      
+    </div>
+    </nav>
+
+<div class="article-meta">
+<h1 class="title">Zotero APA格式调整</h1>
+
+<h3 class="meta-line">
+  <span>
+
+
+
+
+
+
+<span class="date">2024-03-20</span>
+
+
+</span>
+  <span class="term">
+  
+  
+  </span>
+</h3>
+</div>
+
+<div class="main">
+
+
+
+
+<p>最近开始写毕业论文了，但是发现插入论文的引用实在是太麻烦了。借助Zotero的帮助，可以直接插入APA格式的引用，但是格式又与学校要求的APA格式有所不同，虽然可以在<a href="https://editor.citationstyles.org/">这个网站</a>进行可视化的修改，但是还是不能完全满足我的要求，于是我想了个办法，在网站里把我能修改的部分比如去掉DOI和序号做好，再在Word里面，通过宏把相关的格式修改好，详细教程可以看<a href="https://zhuanlan.zhihu.com/p/663211485">这</a>。当然，有个问题是我完全不会用宏，就让GPT帮我写了一个。</p>
+<pre><code>Attribute VB_Name = &quot;NewMacros1&quot;
+Sub Adjuststyles()
+
+    Call italicstyles
+    
+    Call RemoveParagraphIndentationAndDoubleSpacing
+End Sub
+
+
+Public Sub italicstyles()
+    Dim doc As Document
+    Set doc = ActiveDocument
+
+    Dim para As Paragraph
+    Dim regex As Object
+    Set regex = CreateObject(&quot;VBScript.RegExp&quot;)
+    
+    regex.Pattern = &quot;.*[\u4e00-\u9fa5]+, \d+.*&quot;
+
+    For Each para In doc.Paragraphs
+        If regex.Test(para.Range.text) Then
+            para.Range.Font.Italic = False
+        End If
+    Next para
+
+    regex.Pattern = &quot;([\u4e00-\u9fa5]+), \d+.*&quot;
+
+    For Each para In doc.Paragraphs
+        Dim matches As Object
+        Set matches = regex.Execute(para.Range.text)
+        
+        For Each match In matches
+            Dim matchRange As Range
+            Set matchRange = para.Range.Duplicate
+            matchRange.Find.text = match.SubMatches(0)
+            matchRange.Find.Execute
+            matchRange.Font.Italic = True
+        Next match
+    Next para
+End Sub
+
+
+Public Sub RemoveParagraphIndentationAndDoubleSpacing()
+    Dim para As Paragraph
+    Dim text As String
+    Dim i As Long
+    
+    For Each para In ActiveDocument.Paragraphs
+        text = para.Range.text
+        If Left(text, 1) = &quot;[&quot; Then
+            para.LeftIndent = 0
+            para.FirstLineIndent = 0
+            para.LineSpacingRule = wdLineSpaceSingle
+        End If
+    Next para
+End Sub
+
+
+</code></pre>
+<p>这样一来，格式就完全调好了。使用方法也很简单，简单来说就是在Zotero里导入编辑好的引用格式，再在word里面导入宏，就可以用了。</p>
+<hr>
+<p>注：这篇博客的原稿已佚失，这是新写的稿子。</p>
+
+
+
+<nav class="post-nav fullwidth">
+  <span>&larr; <a href="/blog/2024-12-29-2025/">2025年计划</a></span>
+  <span><a href="/blog/2024-01-30-excel2eprime/">excel2eprime开发记</a> &rarr;</span>
+</nav>
+
+
+
+</div>
+  <footer class="small">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/rstudio/markdown/inst/resources/prism-xcode.css">
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/copy-button.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@xiee/utils/css/copy-button.min.css">
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/external-link.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/fullwidth.min.js" defer></script>
+
+  
+  </footer>
+  </body>
+</html>
+
