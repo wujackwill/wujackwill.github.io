@@ -1,0 +1,76 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+	<title>Jack&#39;s BLOG</title>
+	<link>http://localhost:36917/tags/</link>
+	<description>Recent content in Tags on Jack&#39;s BLOG</description>
+	<generator>Hugo -- gohugo.io</generator>
+	<language>en-us</language>
+    
+        <atom:link href="http://localhost:36917/tags/index.xml" rel="self" type="application/rss+xml" />
+	
+	
+	<item>
+		<title>2026年我的Neovim配置</title>
+		<link>http://localhost:36917/neovim/</link>
+		<pubDate>Sat, 14 Feb 2026 09:03:01 +0800</pubDate>
+		
+		<guid>http://localhost:36917/neovim/</guid>
+		<description>&lt;p&gt;从大学开始，我一直在折腾Neovim编辑器，它开源、快速、高度客制化，符合我对编辑器的一切要求。虽然代码没写多少，两三年也积累了不少设置，光是包管理器就从&lt;code&gt;vim-plug&lt;/code&gt;换到&lt;code&gt;packer.nvim&lt;/code&gt;再到&lt;code&gt;lazy.nvim&lt;/code&gt;。这次趁着春节假期，简单整理一下配置。&lt;/p&gt;
+&lt;p&gt;其实我的编程需求很简单：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用Rust写一些小CLI；&lt;/li&gt;
+&lt;li&gt;用R做数据分析和画图；&lt;/li&gt;
+&lt;li&gt;用Python写算法和Manim库做动画;&lt;/li&gt;
+&lt;li&gt;用Latex套模板写文章;&lt;/li&gt;
+&lt;li&gt;用lua写Neovim配置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;所以配置不需要太复杂。&lt;/p&gt;
+&lt;h2 id=&#34;包管理器&#34;&gt;包管理器&lt;/h2&gt;
+&lt;p&gt;我没有什么特殊需求，现在WSL中的Neovim的加载速度也还可以，所以目前没有理由再切换到&lt;code&gt;Lazy.nvim&lt;/code&gt;，至于on-demand loading，作者是这么说的&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A properly implemented Vim plugin should already load lazily without any help from a plugin manager (:help autoload). So there are few cases where these options actually make much sense. Making a plugin load faster is the responsibility of the plugin developer, not the user. If you find a plugin that takes too long to load, consider opening an issue on the plugin&amp;rsquo;s issue tracker.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以让插件快速加载是插件作者的事，而不是包管理器应该干的事（虽然&lt;code&gt;vim-plug&lt;/code&gt;也可以实现）。但是对于我没什么影响，毕竟我的启动速度已经够快，而且&lt;code&gt;vim-plug&lt;/code&gt;也足够好用。&lt;/p&gt;
+&lt;h2 id=&#34;常用插件&#34;&gt;常用插件&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Plug(&amp;#34;nvim-lua/plenary.nvim&amp;#34;)
+Plug(&amp;#34;ThePrimeagen/harpoon&amp;#34;)
+Plug(&amp;#34;nvim-telescope/telescope.nvim&amp;#34;, { [&amp;#34;version&amp;#34;] = &amp;#34;*&amp;#34; })
+Plug(&amp;#34;nvim-treesitter/nvim-treesitter&amp;#34;, { [&amp;#34;build&amp;#34;] = &amp;#34;:TSUpdate&amp;#34; })
+Plug(&amp;#34;R-nvim/R.nvim&amp;#34;)
+Plug(&amp;#34;vedantwpatil/manim-nvim&amp;#34;)
+Plug(&amp;#34;neovim/nvim-lspconfig&amp;#34;)
+Plug(&amp;#34;williamboman/mason.nvim&amp;#34;)
+Plug(&amp;#34;williamboman/mason-lspconfig.nvim&amp;#34;)
+Plug(&amp;#34;j-hui/fidget.nvim&amp;#34;)
+Plug(&amp;#34;hrsh7th/cmp-nvim-lsp&amp;#34;)
+Plug(&amp;#34;hrsh7th/cmp-buffer&amp;#34;)
+Plug(&amp;#34;hrsh7th/cmp-path&amp;#34;)
+Plug(&amp;#34;hrsh7th/cmp-cmdline&amp;#34;)
+Plug(&amp;#34;hrsh7th/nvim-cmp&amp;#34;)
+Plug(&amp;#34;L3MON4D3/LuaSnip&amp;#34;, { [&amp;#34;tag&amp;#34;] = &amp;#34;v2.4.1&amp;#34;, [&amp;#34;do&amp;#34;] = &amp;#34;make install_jsregexp&amp;#34; })
+Plug(&amp;#34;saadparwaiz1/cmp_luasnip&amp;#34;)
+Plug(&amp;#34;rafamadriz/friendly-snippets&amp;#34;)
+Plug(&amp;#34;stevearc/conform.nvim&amp;#34;)
+Plug(&amp;#34;lervag/vimtex&amp;#34;)
+Plug(&amp;#34;nvim-lualine/lualine.nvim&amp;#34;)
+Plug(&amp;#34;lukas-reineke/indent-blankline.nvim&amp;#34;)
+Plug(&amp;#34;numToStr/Comment.nvim&amp;#34;)
+Plug(&amp;#34;tpope/vim-fugitive&amp;#34;)
+Plug(&amp;#34;mbbill/undotree&amp;#34;)
+Plug(&amp;#34;https://codeberg.org/andyg/leap.nvim&amp;#34;)
+Plug(&amp;#34;tpope/vim-repeat&amp;#34;)
+Plug(&amp;#34;windwp/nvim-autopairs&amp;#34;)
+Plug(&amp;#34;iamcco/markdown-preview.nvim&amp;#34;, { [&amp;#34;do&amp;#34;] = &amp;#34;cd app &amp;amp;&amp;amp; npx --yes yarn install&amp;#34; })
+Plug(&amp;#34;epwalsh/obsidian.nvim&amp;#34;)
+Plug(&amp;#34;img-paste-devs/img-paste.vim&amp;#34;)
+Plug(&amp;#34;Shougo/unite.vim&amp;#34;)
+Plug(&amp;#34;rafaqz/citation.vim&amp;#34;)
+Plug(&amp;#34;blazkowolf/gruber-darker.nvim&amp;#34;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;最主要的是&lt;code&gt;telescope&lt;/code&gt;、&lt;code&gt;lsp&lt;/code&gt;一些插件、&lt;code&gt;vimtex&lt;/code&gt;，&lt;code&gt;R.nvim&lt;/code&gt;，剩下的都是一些功能性的插件，比如&lt;code&gt;leap&lt;/code&gt;用来快速移动，&lt;code&gt;Comment&lt;/code&gt;用来注释代码，&lt;code&gt;autopairs&lt;/code&gt;用来生成成对括号等。&lt;/p&gt;
+&lt;p&gt;至于&lt;code&gt;Coc&lt;/code&gt;，它固然好用，安装方便，server直接&lt;code&gt;CocInstall&lt;/code&gt;就能安装，但是有段时间&lt;code&gt;r-languaguerserver&lt;/code&gt;一直报错（可能不是Coc的问题），所以我换成了Neovim内置的Lsp，感觉稳定一些。&lt;code&gt;lsp&lt;/code&gt;我也没有下载多少，主要还是&lt;code&gt;r-languageserver&lt;/code&gt;、&lt;code&gt;rust_analyzer&lt;/code&gt;、&lt;code&gt;basepyright&lt;/code&gt;和&lt;code&gt;emmylua_ls&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;至于别的，基本是安装插件的基本配置，不再赘述。这样一套配置下来，基本可以满足我的编程、写作需求，所以我近期不打算再调整配置，把精力放在好好写程序和研究问题上。&lt;/p&gt;
+</description>
+	</item>
+	
+	</channel>
+</rss>
