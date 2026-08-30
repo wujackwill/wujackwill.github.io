@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<title>Food5k 初体验 | Jack&#39;s BLOG</title>
+	<link rel="canonical" href="http://localhost:1313/">
+	<link rel='alternate' type='application/rss+xml' title="Jack&#39;s BLOG RSS" href='/index.xml'>
+	<link rel='stylesheet' type='text/css' href='/style.css'>
+	<link rel="icon" href="/favicon.ico">
+	<meta name="description" content="大学的时候，学了一段时间R语言，挺长时间没用，有点生疏了，最近打算重新捡起来。今天在逛美团技术博客的时候，偶然发现了一个好玩的文章，题目是大规模食品图像识别：T-PAMI 2023论文解读,主要是通过挖掘食品图像的本身特点进行大规模食品图像识别。博客里提到
+
+现有的工作主要是利用中小规模的图像数据集进行食品图像识别，如ETH Food-101[5]、Vireo Food-172[6]和ISIA Food- 500[7]，但是它们的数据规模不足以支撑更复杂更先进的食品计算模型的建立。
+
+所以研究人员构建了一个新的食品图像数据集Food2K来进行各种食品计算任务，该数据集包含1,036,564张食品图像和2,000类食品，涉及12个超类（如蔬菜、肉类、烧烤和油炸食品等）和26个子类别。但是对于我来说，这个数据集太大了，一是因为其总共60多个G，我的网络和硬盘储存都有点不太行。所以选了Food5k，这是一个包含5000张图片的数据集，一共分两大类，食品和非食品共占一半，数据集目录结构也很简单，有training, validation, evaluation三个子文件夹，分别用来训练、验证和评估。每个子文件夹各含3000、1000、1000张图片，食物和非食物类均各占一半。食物类图片的图片名以&#39;1&rsquo;开头，非食物则以&#39;0&rsquo;开头。
+
+今天先不训练 CNN，从数据分析入手
+files &lt;- dir_ls(&#34;./data/raw/Food-5K&#34;,
+  recurse = TRUE,
+  regexp = &#34;\\.jpg$&#34;
+)
+
+filename &lt;- path_file(files)
+
+class_id &lt;- str_extract(filename, &#34;^[01]&#34;)
+
+label &lt;- ifelse(class_id == 1, &#34;food&#34;, &#34;non_food&#34;)
+
+split &lt;- case_when(
+  str_detect(files, &#34;training&#34;) ~ &#34;training&#34;,
+  str_detect(files, &#34;validation&#34;) ~ &#34;validation&#34;,
+  str_detect(files, &#34;evaluation&#34;) ~ &#34;evaluation&#34;,
+  TRUE ~ NA_character_
+)
+
+food5k &lt;- tibble(
+  path = files,
+  filename = filename,
+  class_id = class_id,
+  label = label,
+  split = split
+)
+这一part主要目的是建立一个food5k的tibble，分成几列，一是文件路径，文件名，0或1的分类，标签（是否是food）和所在文件夹名。">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="index, follow">
+	<meta charset="utf-8">
+</head>
+<body>
+<main>
+<a href="/"><header>
+	<h1 id="tag_Food5k-初体验">Food5k 初体验</h1>
+</header></a>
+<article>
+<p>大学的时候，学了一段时间R语言，挺长时间没用，有点生疏了，最近打算重新捡起来。今天在逛美团技术博客的时候，偶然发现了一个好玩的文章，题目是<a href="https://tech.meituan.com/2023/02/23/Large-Scale-Visual-Food-Recognition.html">大规模食品图像识别：T-PAMI 2023论文解读</a>,主要是通过挖掘食品图像的本身特点进行大规模食品图像识别。博客里提到</p>
+<blockquote>
+<p>现有的工作主要是利用中小规模的图像数据集进行食品图像识别，如ETH Food-101[5]、Vireo Food-172[6]和ISIA Food- 500[7]，但是它们的数据规模不足以支撑更复杂更先进的食品计算模型的建立。</p>
+</blockquote>
+<p>所以研究人员构建了一个新的食品图像数据集<code>Food2K</code>来进行各种食品计算任务，该数据集包含1,036,564张食品图像和2,000类食品，涉及12个超类（如蔬菜、肉类、烧烤和油炸食品等）和26个子类别。但是对于我来说，这个数据集太大了，一是因为其总共60多个G，我的网络和硬盘储存都有点不太行。所以选了Food5k，这是一个包含5000张图片的数据集，一共分两大类，食品和非食品共占一半，数据集目录结构也很简单，有<code>training</code>, <code>validation</code>, <code>evaluation</code>三个子文件夹，分别用来训练、验证和评估。每个子文件夹各含3000、1000、1000张图片，食物和非食物类均各占一半。食物类图片的图片名以'1&rsquo;开头，非食物则以'0&rsquo;开头。</p>
+<p><img src="/images/overview.png" alt=""></p>
+<p>今天先不训练 CNN，从数据分析入手</p>
+<pre tabindex="0"><code>files &lt;- dir_ls(&#34;./data/raw/Food-5K&#34;,
+  recurse = TRUE,
+  regexp = &#34;\\.jpg$&#34;
+)
+
+filename &lt;- path_file(files)
+
+class_id &lt;- str_extract(filename, &#34;^[01]&#34;)
+
+label &lt;- ifelse(class_id == 1, &#34;food&#34;, &#34;non_food&#34;)
+
+split &lt;- case_when(
+  str_detect(files, &#34;training&#34;) ~ &#34;training&#34;,
+  str_detect(files, &#34;validation&#34;) ~ &#34;validation&#34;,
+  str_detect(files, &#34;evaluation&#34;) ~ &#34;evaluation&#34;,
+  TRUE ~ NA_character_
+)
+
+food5k &lt;- tibble(
+  path = files,
+  filename = filename,
+  class_id = class_id,
+  label = label,
+  split = split
+)
+</code></pre><p>这一part主要目的是建立一个food5k的tibble，分成几列，一是文件路径，文件名，0或1的分类，标签（是否是food）和所在文件夹名。</p>
+<pre tabindex="0"><code>sum(food5k$label == &#34;non_food&#34;)
+</code></pre><p>输出是2500,说明整对了。</p>
+<p>下一part，准备再在food5k这个tibble里面，加上每张图片的width，height和file_size等参数</p>
+<pre tabindex="0"><code>get_image_info &lt;- function(path) {
+  info &lt;- image_info(image_read(path))
+  tibble(
+    width = info$width,
+    height = info$height,
+    file_size = info$filesize,
+    aspect_ratio = info$width / info$height
+  )
+}
+
+library(purrr)
+image_metadata &lt;- map_dfr(
+  food5k$path,
+  get_image_info
+)
+
+food5k &lt;- bind_cols(
+  food5k,
+  image_metadata
+)
+</code></pre><p>先是写了一个get_image_info函数，先读一个图片的width等参数，然后用<code>purrr</code>包，用在5000个路径上</p>
+<blockquote>
+<p>拿 <code>food5k$path</code> 里面的每一个路径，依次交给 <code>get_image_info()</code>，然后把所有结果按行合并起来</p>
+</blockquote>
+<p><img src="/images/408042D4-4BBB-4845-8139-4C88A408C4FB.png" alt=""></p>
+<p>最后再和之前的tibble合并，变成我们想要的数据集，想下面那样
+<img src="/images/722F6E01-4319-4B6C-A9B3-E149F02020B1.png" alt=""></p>
+<p>最后，画一张图看一下整体情况</p>
+<pre tabindex="0"><code>ggplot(
+  food5k,
+  aes(x = split, y = file_size / 1024, fill = label)
+) +
+  geom_boxplot() +
+  labs(
+    title = &#34;File Size Across Dataset Splits&#34;,
+    x = NULL,
+    y = &#34;File size (KB)&#34;,
+    fill = &#34;Label&#34;
+  )
+</code></pre><p><img src="/images/all.png" alt=""></p>
+
+<br clear=both>
+<div id="nextprev">
+<a href="/2026_neovim/"><div id="prevart">Previous:<br>2026年我的Neovim配置</div></a>
+</div>
+<br clear=both>
+</article>
+</main>
+<footer>
+	<a href="http://localhost:1313/">Home Page</a><br><br><a href="/index.xml"><img src="/rss.svg" style="max-height:1.5em" alt="RSS Feed" title="Subscribe via RSS for updates."></a>
+</footer>
+</body>
+</html>
