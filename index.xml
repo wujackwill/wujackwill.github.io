@@ -1,21 +1,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
 	<title>Jack&#39;s BLOG</title>
-	<link>https://wujackwill.github.io/</link>
+	<link>http://localhost:1313/</link>
 	<description>Recent content on Jack&#39;s BLOG</description>
 	<generator>Hugo -- gohugo.io</generator>
 	<language>en-us</language>
 	<lastBuildDate>Tue, 20 Oct 2026 00:07:12 +0800</lastBuildDate>
     
-        <atom:link href="https://wujackwill.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
 	
 	
 	<item>
 		<title>知其不可奈何，却不安之若命</title>
-		<link>https://wujackwill.github.io/lajeunesse/</link>
+		<link>http://localhost:1313/lajeunesse/</link>
 		<pubDate>Tue, 20 Oct 2026 00:07:12 +0800</pubDate>
 		
-		<guid>https://wujackwill.github.io/lajeunesse/</guid>
+		<guid>http://localhost:1313/lajeunesse/</guid>
 		<description>&lt;p&gt;有些决定，不是在一切顺利的时候做出的，而是在经历了足够多的失望之后，终于不想再过这样的生活。2026年10月20日，我决定重新开始。
 过去的一段时间里，我曾经对一些事情抱有期待。有人曾经答应过我，可以把调动我，我曾经相信，这意味着自己能够更上一层楼，可是后来，这件事被拒绝了；有人曾经答应我，可以帮我介绍女朋友，我曾经相信，这意味着生活能有一个新的气息，可是后来，这件事没有了下文。
 但是真正让我难受的，不只是事情没有办成，而是我竟然曾经认真地相信过。我把别人的一句话当成了未来的一种可能，把别人许诺的机会当成了自己可以期待的方向。但等到事情落空我才发现，自己其实并没有什么变化，因为那些事情、那些希望一开始就建立在别人的决定之上。别人可以答应，也可以拒绝；也可以热情，也可以冷淡，可以在某个时刻向我表达善意，也可以在之后与我形同陌路。
@@ -42,16 +42,16 @@
 	
 	<item>
 		<title>Food5k 初体验</title>
-		<link>https://wujackwill.github.io/food5k1/</link>
+		<link>http://localhost:1313/food5k1/</link>
 		<pubDate>Sun, 30 Aug 2026 16:08:17 +0800</pubDate>
 		
-		<guid>https://wujackwill.github.io/food5k1/</guid>
+		<guid>http://localhost:1313/food5k1/</guid>
 		<description>&lt;p&gt;大学的时候，学了一段时间R语言，挺长时间没用，有点生疏了，最近打算重新捡起来。今天在逛美团技术博客的时候，偶然发现了一个好玩的文章，题目是&lt;a href=&#34;https://tech.meituan.com/2023/02/23/Large-Scale-Visual-Food-Recognition.html&#34;&gt;大规模食品图像识别：T-PAMI 2023论文解读&lt;/a&gt;,主要是通过挖掘食品图像的本身特点进行大规模食品图像识别。博客里提到&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;现有的工作主要是利用中小规模的图像数据集进行食品图像识别，如ETH Food-101[5]、Vireo Food-172[6]和ISIA Food- 500[7]，但是它们的数据规模不足以支撑更复杂更先进的食品计算模型的建立。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;所以研究人员构建了一个新的食品图像数据集&lt;code&gt;Food2K&lt;/code&gt;来进行各种食品计算任务，该数据集包含1,036,564张食品图像和2,000类食品，涉及12个超类（如蔬菜、肉类、烧烤和油炸食品等）和26个子类别。但是对于我来说，这个数据集太大了，一是因为其总共60多个G，我的网络和硬盘储存都有点不太行。所以选了Food5k，这是一个包含5000张图片的数据集，一共分两大类，食品和非食品共占一半，数据集目录结构也很简单，有&lt;code&gt;training&lt;/code&gt;, &lt;code&gt;validation&lt;/code&gt;, &lt;code&gt;evaluation&lt;/code&gt;三个子文件夹，分别用来训练、验证和评估。每个子文件夹各含3000、1000、1000张图片，食物和非食物类均各占一半。食物类图片的图片名以&#39;1&amp;rsquo;开头，非食物则以&#39;0&amp;rsquo;开头。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://wujackwill.github.io/images/overview.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/overview.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;今天先不训练 CNN，从数据分析入手&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;files &amp;lt;- dir_ls(&amp;#34;./data/raw/Food-5K&amp;#34;,
   recurse = TRUE,
@@ -106,9 +106,9 @@ food5k &amp;lt;- bind_cols(
 &lt;blockquote&gt;
 &lt;p&gt;拿 &lt;code&gt;food5k$path&lt;/code&gt; 里面的每一个路径，依次交给 &lt;code&gt;get_image_info()&lt;/code&gt;，然后把所有结果按行合并起来&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://wujackwill.github.io/images/%7B408042D4-4BBB-4845-8139-4C88A408C4FB%7D.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/%7B408042D4-4BBB-4845-8139-4C88A408C4FB%7D.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;最后再和之前的tibble合并，变成我们想要的数据集，像下面那样&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://wujackwill.github.io/images/%7B722F6E01-4319-4B6C-A9B3-E149F02020B1%7D.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/%7B722F6E01-4319-4B6C-A9B3-E149F02020B1%7D.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;最后，画一张图看一下整体情况&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ggplot(
   food5k,
@@ -121,16 +121,16 @@ food5k &amp;lt;- bind_cols(
     y = &amp;#34;File size (KB)&amp;#34;,
     fill = &amp;#34;Label&amp;#34;
   )
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://wujackwill.github.io/images/all.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/all.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
 	</item>
 	
 	<item>
 		<title>2026年我的Neovim配置</title>
-		<link>https://wujackwill.github.io/2026_neovim/</link>
+		<link>http://localhost:1313/2026_neovim/</link>
 		<pubDate>Sat, 14 Feb 2026 09:03:20 -0800</pubDate>
 		
-		<guid>https://wujackwill.github.io/2026_neovim/</guid>
+		<guid>http://localhost:1313/2026_neovim/</guid>
 		<description>&lt;p&gt;从大学开始，我一直在折腾Neovim编辑器，它开源、快速、高度客制化，符合我对编辑器的一切要求。虽然代码没写多少，两三年也积累了不少设置，光是包管理器就从vim-plug换到packer.nvim再到lazy.nvim。这次趁着春节假期，简单整理一下配置。&lt;/p&gt;
 &lt;p&gt;其实我的编程需求很简单：&lt;/p&gt;
 &lt;ul&gt;
